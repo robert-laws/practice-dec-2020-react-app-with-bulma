@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ReactComponent as Logo } from '../images/logo-placeholder.svg';
 import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
@@ -13,12 +14,7 @@ export const Header = () => {
       <nav className='navbar is-transparent'>
         <div className='navbar-brand'>
           <NavLink className='navbar-item' to='/'>
-            <img
-              src='https://bulma.io/images/bulma-logo.png'
-              alt='Bulma: a modern CSS framework based on Flexbox'
-              width='112'
-              height='28'
-            />
+            <Logo alt='Data Viz Cafe' width='60' height='60' />
           </NavLink>
           <div
             className={`${
@@ -44,9 +40,18 @@ export const Header = () => {
             <NavLink className='navbar-item' to='/menu'>
               Menu
             </NavLink>
+            <NavLink className='navbar-item' to='/'>
+              Place an Order
+            </NavLink>
+            <NavLink className='navbar-item' to='/'>
+              Data
+            </NavLink>
+            <NavLink className='navbar-item' to='/'>
+              Data Visualization Concepts
+            </NavLink>
             <div className='navbar-item has-dropdown is-hoverable'>
               <NavLink className='navbar-link' to='/'>
-                Docs
+                Class Weeks
               </NavLink>
               <div className='navbar-dropdown is-boxed'>
                 <NavLink className='navbar-item' to='/'>
