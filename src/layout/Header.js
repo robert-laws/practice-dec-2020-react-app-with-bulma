@@ -55,11 +55,43 @@ export const Header = () => {
               </NavLink>
               <div className='navbar-dropdown is-boxed'>
                 <NavLink className='navbar-item' to='/'>
-                  Overview
+                  Week 1
                 </NavLink>
                 <NavLink className='navbar-item' to='/'>
-                  Modifiers
+                  Week 2
                 </NavLink>
+                <NavLink className='navbar-item' to='/'>
+                  Week 3
+                </NavLink>
+                <NavLink className='navbar-item' to='/'>
+                  Week 4
+                </NavLink>
+                <NavLink className='navbar-item' to='/'>
+                  Week 5
+                </NavLink>
+              </div>
+            </div>
+          </div>
+
+          <div className='navbar-end'>
+            <div className='navbar-item'>
+              <div className='field is-grouped'>
+                <p className='control'>
+                  <NavLink className='bd-tw-button button' to='/stores'>
+                    <span className='icon'>
+                      <i className='fas fa-store'></i>
+                    </span>
+                    <span>Stores</span>
+                  </NavLink>
+                </p>
+                <p className='control'>
+                  <NavLink className='button is-danger' to='/'>
+                    <span className='icon'>
+                      <i className='fas fa-clipboard-list'></i>
+                    </span>
+                    <span>Menu</span>
+                  </NavLink>
+                </p>
               </div>
             </div>
           </div>
