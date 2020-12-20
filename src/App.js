@@ -5,7 +5,10 @@ import { Home, Stores, Menu, NotFound } from './pages';
 function App() {
   return (
     <Router>
-      <div className='is-flex is-flex-direction-column'>
+      <div
+        className='is-flex is-flex-direction-column'
+        style={{ height: '100vh', width: '100%' }}
+      >
         <Header />
         <Main>
           <Switch>

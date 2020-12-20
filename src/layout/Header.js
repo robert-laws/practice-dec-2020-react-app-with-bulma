@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ReactComponent as Logo } from '../images/logo-placeholder.svg';
+import { ReactComponent as Logo } from '../images/data-viz-cafe-logo-02.svg';
 import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
@@ -10,11 +10,11 @@ export const Header = () => {
   };
 
   return (
-    <header>
+    <header className='is-flex-grow-0'>
       <nav className='navbar is-transparent'>
         <div className='navbar-brand'>
           <NavLink className='navbar-item' to='/'>
-            <Logo alt='Data Viz Cafe' width='60' height='60' />
+            <Logo alt='Data Viz Cafe' width='82' height='82' />
           </NavLink>
           <div
             className={`${
@@ -34,18 +34,6 @@ export const Header = () => {
           className={`${toggle ? 'navbar-menu is-active' : 'navbar-menu'}`}
         >
           <div className='navbar-start'>
-            <NavLink className='navbar-item' to='/stores'>
-              Stores
-            </NavLink>
-            <NavLink className='navbar-item' to='/menu'>
-              Menu
-            </NavLink>
-            <NavLink className='navbar-item' to='/'>
-              Place an Order
-            </NavLink>
-            <NavLink className='navbar-item' to='/'>
-              Data
-            </NavLink>
             <NavLink className='navbar-item' to='/'>
               Data Visualization Concepts
             </NavLink>
@@ -70,6 +58,9 @@ export const Header = () => {
                   Week 5
                 </NavLink>
               </div>
+              <NavLink className='navbar-item' to='/'>
+                About
+              </NavLink>
             </div>
           </div>
 
@@ -85,11 +76,27 @@ export const Header = () => {
                   </NavLink>
                 </p>
                 <p className='control'>
-                  <NavLink className='button is-danger' to='/'>
+                  <NavLink className='button is-danger' to='/menu'>
                     <span className='icon'>
                       <i className='fas fa-clipboard-list'></i>
                     </span>
                     <span>Menu</span>
+                  </NavLink>
+                </p>
+                <p className='control'>
+                  <NavLink className='button is-info' to='/'>
+                    <span className='icon'>
+                      <i className='fas fa-tag'></i>
+                    </span>
+                    <span>Place an Order</span>
+                  </NavLink>
+                </p>
+                <p className='control'>
+                  <NavLink className='button is-info' to='/'>
+                    <span className='icon'>
+                      <i className='fas fa-table'></i>
+                    </span>
+                    <span>Data</span>
                   </NavLink>
                 </p>
               </div>

@@ -1,5 +1,6 @@
 import React from 'react';
+import { SubPage } from '../layout/SubPage';
 
 export const Menu = () => {
-  return <div>Menu</div>;
+  return <SubPage>Menu</SubPage>;
 };

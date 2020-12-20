@@ -1,5 +1,6 @@
 import React from 'react';
+import { SubPage } from '../layout/SubPage';
 
 export const Stores = () => {
-  return <div>Stores</div>;
+  return <SubPage>Stores</SubPage>;
 };
