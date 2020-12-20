@@ -2,8 +2,11 @@ import './App.scss';
 
 function App() {
   return (
-    <div className='App'>
-      <h1>App</h1>
+    <div>
+      <h1 className='mb-2'>App</h1>
+      <a href='/' class='button is-primary'>
+        Primary
+      </a>
     </div>
   );
 }
