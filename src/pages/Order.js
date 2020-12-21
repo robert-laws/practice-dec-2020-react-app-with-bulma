@@ -10,6 +10,8 @@ export const Order = () => {
 
   const [disableStoreCards, setDisableStoreCards] = useState(false);
 
+  const [selectDriveThru, setSelectedDriveThru] = useState(false);
+
   const [menuChoices, setMenuChoices] = useState([]);
 
   const detectStoreSelection = useCallback(
@@ -44,6 +46,8 @@ export const Order = () => {
   const handleNext = () => {
     if (step === 'store') {
       setStep('menu');
+    } else if (step === 'menu') {
+      setStep('finalize');
     }
   };
 
@@ -53,6 +57,58 @@ export const Order = () => {
       setStoreTitle('');
       setDisableStoreCards(false);
     }
+  };
+
+  const getStoreIndex = (store) => {
+    switch (store) {
+      case 'Main Street':
+        return '1';
+      case 'City Mall':
+        return '2';
+      default:
+        break;
+    }
+  };
+
+  const getMenuIndex = (menu) => {
+    switch (menu) {
+      case 'Cafe Latte':
+        return '1';
+      case 'Muffin':
+        return '2';
+      default:
+        break;
+    }
+  };
+
+  const getTime = (date) => {
+    date.setHours(date.getHours() + Math.round(date.getMinutes() / 60));
+    date.setMinutes(0, 0, 0); // Resets also seconds and milliseconds
+
+    return date.getHours();
+  };
+
+  const handlePlaceOrder = () => {
+    const myDate = new Date();
+    const dd = myDate.getDate();
+
+    const mm = myDate.getMonth() + 1;
+    const yyyy = myDate.getFullYear();
+    const today = `${mm}/${dd}/${yyyy}`;
+
+    const time = getTime(myDate);
+
+    const storeIndex = getStoreIndex(storeTitle);
+    const order = menuChoices.map((item) => [
+      storeIndex,
+      getMenuIndex(item.title),
+      today,
+      time,
+      item.quantity,
+      selectDriveThru,
+    ]);
+
+    console.log(order);
   };
 
   return (
@@ -124,18 +180,63 @@ export const Order = () => {
             </section>
           </Fade>
         )}
+        {step === 'finalize' && (
+          <Fade delay={500} duration={500}>
+            <section
+              className={`box ${step === 'finalize' ? 'showBox' : 'hideBox'}`}
+            >
+              <div className='box'>
+                <h4 className='is-size-3-desktop mb-4'>Finalize your Order</h4>
+                <p>Store Pickup: {storeTitle}</p>
+                <p>Menu Items:</p>
+                {menuChoices.map((item, index) => (
+                  <p key={index}>
+                    {item.title}, quantity: {item.quantity}
+                  </p>
+                ))}
+                {hasDriveThru && (
+                  <label className='checkbox'>
+                    <input
+                      checked={selectDriveThru}
+                      onChange={(event) =>
+                        setSelectedDriveThru(event.target.checked)
+                      }
+                      type='checkbox'
+                    />{' '}
+                    Pick up at Drive Thru
+                  </label>
+                )}
+              </div>
+              <button
+                className={'button is-primary'}
+                onClick={handlePlaceOrder}
+              >
+                Place Order
+              </button>
+            </section>
+          </Fade>
+        )}
         {step === 'store' && (
           <button
             disabled={!storeTitle}
             className='button is-info'
             onClick={handleNext}
           >
-            Next Step
+            Select from the Menu
+          </button>
+        )}
+        {step === 'menu' && (
+          <button
+            disabled={!menuChoices}
+            className='button is-info'
+            onClick={handleNext}
+          >
+            Finalize your Order
           </button>
         )}
         {step === 'menu' && (
           <button className='button is-warning' onClick={handlePrevious}>
-            Previous Step
+            Change Store
           </button>
         )}
       </div>

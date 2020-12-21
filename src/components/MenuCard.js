@@ -33,7 +33,7 @@ export const MenuCard = ({
         <p className='title'>{title}</p>
         <p className='subtitle'>{description}</p>
         <p>${price}</p>
-        <div class='select'>
+        <div className='select'>
           <select
             disabled={!selected}
             value={selectedQuantity}
