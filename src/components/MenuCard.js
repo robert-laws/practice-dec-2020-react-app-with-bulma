@@ -21,8 +21,8 @@ export const MenuCard = ({
   };
 
   useEffect(() => {
-    sendSelection(title, selectedQuantity, selected);
-  }, [sendSelection, title, selectedQuantity, selected]);
+    sendSelection(title, selectedQuantity, price, selected);
+  }, [sendSelection, title, selectedQuantity, price, selected]);
 
   return (
     <div

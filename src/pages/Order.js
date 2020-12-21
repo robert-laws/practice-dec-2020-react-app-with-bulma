@@ -30,11 +30,11 @@ export const Order = () => {
   );
 
   const detectMenuSelection = useCallback(
-    (title, quantity, cardSelected) => {
+    (title, quantity, price, cardSelected) => {
       if (cardSelected) {
         setMenuChoices((prev) => [
           ...prev.filter((item) => item.title !== title),
-          { title, quantity },
+          { title, quantity, total: parseInt(quantity) * parseFloat(price) },
         ]);
       } else {
         setMenuChoices((prev) => prev.filter((item) => item.title !== title));
@@ -109,6 +109,8 @@ export const Order = () => {
     ]);
 
     console.log(order);
+
+    setStep('confirmation');
   };
 
   return (
@@ -206,6 +208,21 @@ export const Order = () => {
                     Pick up at Drive Thru
                   </label>
                 )}
+                <p>
+                  <strong>
+                    Total Quantity:{' '}
+                    {menuChoices.reduce(
+                      (sum, item) => sum + parseInt(item.quantity),
+                      0
+                    )}
+                  </strong>
+                </p>
+                <p>
+                  <strong>
+                    Total Price: $
+                    {menuChoices.reduce((sum, item) => sum + item.total, 0)}
+                  </strong>
+                </p>
               </div>
               <button
                 className={'button is-primary'}
@@ -213,6 +230,20 @@ export const Order = () => {
               >
                 Place Order
               </button>
+            </section>
+          </Fade>
+        )}
+        {step === 'confirmation' && (
+          <Fade delay={500} duration={500}>
+            <section
+              className={`box ${
+                step === 'confirmation' ? 'showBox' : 'hideBox'
+              }`}
+            >
+              <div className='box'>
+                <h4 className='is-size-3-desktop mb-4'>Order Confirmed</h4>
+                <p>Thank you for your order</p>
+              </div>
             </section>
           </Fade>
         )}
