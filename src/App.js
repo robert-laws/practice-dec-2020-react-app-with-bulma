@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Header, Main, Footer } from './layout';
 import { Home, Stores, Menu, NotFound } from './pages';
+import { StoreExample } from './pages/StoreExample';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
             </Route>
             <Route path='/stores'>
               <Stores />
+            </Route>
+            <Route path='/example'>
+              <StoreExample />
             </Route>
             <Route path='/menu'>
               <Menu />
