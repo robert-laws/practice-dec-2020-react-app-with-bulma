@@ -4,6 +4,8 @@ import { SubPage } from '../layout/SubPage';
 import { Card } from '../components';
 
 export const StoreExample = () => {
+  const [step, setStep] = useState('store');
+
   const [firstStep, setFirstStep] = useState(false);
   const [disableCards, setDisableCards] = useState(false);
   const [selectedStore, setSelectedStore] = useState('');
@@ -35,9 +37,10 @@ export const StoreExample = () => {
           Shop Example
         </h1>
 
-        {!toggle && (
+        {step === 'store' && (
           <Fade delay={500} duration={500}>
             <section className={`box ${toggle ? 'hideBox' : 'showBox'}`}>
+              <h4 className='is-size-3-desktop mb-4'>Select a Store</h4>
               <div className='columns'>
                 <div className='column'>
                   <Card
@@ -118,11 +121,20 @@ export const StoreExample = () => {
           </Fade>
         )}
 
-        {toggle && (
+        {step === 'pickup' && (
           <Fade delay={500} duration={500}>
             <div className={`box ${!toggle ? 'hideBox' : 'showBox'}`}>
-              <h4 className='is-size-4-desktop'>Store Two</h4>
+              <h4 className='is-size-4-desktop'>Select how to Pick Up</h4>
               <p>{selectedStore}</p>
+            </div>
+          </Fade>
+        )}
+
+        {step === 'menu' && (
+          <Fade delay={500} duration={500}>
+            <div className={`box ${!toggle ? 'hideBox' : 'showBox'}`}>
+              <h4 className='is-size-4-desktop'>Select from the Menu</h4>
+              <p>...</p>
             </div>
           </Fade>
         )}
