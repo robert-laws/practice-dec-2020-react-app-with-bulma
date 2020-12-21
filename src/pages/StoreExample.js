@@ -42,7 +42,11 @@ export const StoreExample = () => {
           </Fade>
         )}
 
-        <button className='button is-info' onClick={handleClick}>
+        <button
+          disabled={toggle}
+          className='button is-info'
+          onClick={handleClick}
+        >
           Select
         </button>
       </div>
