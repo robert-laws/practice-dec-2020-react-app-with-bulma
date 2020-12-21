@@ -1,39 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-export const Card = ({
-  title,
-  street,
-  sendSelection,
-  disableCard,
-  cardSelected = false,
-}) => {
-  const [selected, setSelected] = useState(cardSelected);
-
-  const handleClick = () => {
-    setSelected((prev) => !prev);
-  };
-
-  useEffect(() => {
-    sendSelection(title, selected);
-  }, [sendSelection, title, selected]);
-
+export const Card = () => {
   return (
-    <div
-      className='card'
-      style={{ backgroundColor: selected ? 'lightblue' : 'white' }}
-    >
-      <div className='card-content' style={{ minHeight: '10rem' }}>
-        <p className='title'>{title}</p>
-        <p className='subtitle'>{street}</p>
+    <div className='card'>
+      <div className='card-content'>
+        <p className='title'>
+          “There are two hard things in computer science: cache invalidation,
+          naming things, and off-by-one errors.”
+        </p>
+        <p className='subtitle'>Jeff Atwood</p>
       </div>
-      <footer className='card-footer p-2'>
-        <button
-          disabled={disableCard && !selected}
-          className='button is-medium is-fullwidth is-info'
-          onClick={handleClick}
-        >
-          {selected ? 'Unselect' : 'Select'}
-        </button>
+      <footer className='card-footer p-3'>
+        <button className='button is-primary is-fullwidth'>Select</button>
       </footer>
     </div>
   );

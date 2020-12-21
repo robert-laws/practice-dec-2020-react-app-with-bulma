@@ -39,16 +39,40 @@ export const Header = () => {
                 Go to the Data Viz Cafe
               </NavLink>
               <div className='navbar-dropdown is-boxed'>
-                <NavLink className='navbar-item' to='/stores'>
+                <NavLink
+                  className='navbar-item'
+                  to='/stores'
+                  onClick={(event) => {
+                    event.target.blur();
+                  }}
+                >
                   Stores
                 </NavLink>
-                <NavLink className='navbar-item' to='/menu'>
+                <NavLink
+                  className='navbar-item'
+                  to='/menu'
+                  onClick={(event) => {
+                    event.target.blur();
+                  }}
+                >
                   Menu
                 </NavLink>
-                <NavLink className='navbar-item' to='/order'>
+                <NavLink
+                  className='navbar-item'
+                  to='/order'
+                  onClick={(event) => {
+                    event.target.blur();
+                  }}
+                >
                   Place an Order
                 </NavLink>
-                <NavLink className='navbar-item' to='/'>
+                <NavLink
+                  className='navbar-item'
+                  to='/'
+                  onClick={(event) => {
+                    event.target.blur();
+                  }}
+                >
                   Data
                 </NavLink>
               </div>
@@ -61,19 +85,49 @@ export const Header = () => {
                 Class Weeks
               </NavLink>
               <div className='navbar-dropdown is-boxed'>
-                <NavLink className='navbar-item' to='/'>
+                <NavLink
+                  className='navbar-item'
+                  to='/'
+                  onClick={(event) => {
+                    event.target.blur();
+                  }}
+                >
                   Week 1
                 </NavLink>
-                <NavLink className='navbar-item' to='/'>
+                <NavLink
+                  className='navbar-item'
+                  to='/'
+                  onClick={(event) => {
+                    event.target.blur();
+                  }}
+                >
                   Week 2
                 </NavLink>
-                <NavLink className='navbar-item' to='/'>
+                <NavLink
+                  className='navbar-item'
+                  to='/'
+                  onClick={(event) => {
+                    event.target.blur();
+                  }}
+                >
                   Week 3
                 </NavLink>
-                <NavLink className='navbar-item' to='/'>
+                <NavLink
+                  className='navbar-item'
+                  to='/'
+                  onClick={(event) => {
+                    event.target.blur();
+                  }}
+                >
                   Week 4
                 </NavLink>
-                <NavLink className='navbar-item' to='/'>
+                <NavLink
+                  className='navbar-item'
+                  to='/'
+                  onClick={(event) => {
+                    event.target.blur();
+                  }}
+                >
                   Week 5
                 </NavLink>
               </div>
