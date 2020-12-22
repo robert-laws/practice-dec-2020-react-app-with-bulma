@@ -2,8 +2,33 @@ import React, { useState, useCallback } from 'react';
 import Fade from 'react-reveal/Fade';
 import { SubPage } from '../layout/SubPage';
 import { MenuCard, StoreCard } from '../components';
+import { GoogleSpreadsheet } from 'google-spreadsheet';
+import { v4 as uuid_v4 } from 'uuid';
 
 export const Order = () => {
+  const SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
+  const SHEET_ID = process.env.REACT_APP_SHEET_ID;
+  const CLIENT_EMAIL = process.env.REACT_APP_GOOGLE_CLIENT_EMAIL;
+  const PRIVATE_KEY = process.env.REACT_APP_GOOGLE_SERVICE_PRIVATE_KEY;
+
+  const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
+
+  const appendSpreadsheet = async (row) => {
+    try {
+      await doc.useServiceAccountAuth({
+        client_email: CLIENT_EMAIL,
+        private_key: PRIVATE_KEY,
+      });
+      // loads document properties and worksheets
+      await doc.loadInfo();
+
+      const sheet = doc.sheetsById[SHEET_ID];
+      await sheet.addRow(row);
+    } catch (e) {
+      console.error('Error: ', e);
+    }
+  };
+
   const [step, setStep] = useState('store');
   const [storeTitle, setStoreTitle] = useState('');
   const [hasDriveThru, setHasDriveThru] = useState(false);
@@ -99,16 +124,34 @@ export const Order = () => {
     const time = getTime(myDate);
 
     const storeIndex = getStoreIndex(storeTitle);
-    const order = menuChoices.map((item) => [
-      storeIndex,
-      getMenuIndex(item.title),
-      today,
-      time,
-      item.quantity,
-      selectDriveThru,
-    ]);
 
-    console.log(order);
+    // const order = menuChoices.map((item) => [
+    //   {
+    //     id: uuid_v4(),
+    //     location_id: storeIndex,
+    //     menu_id: getMenuIndex(item.title),
+    //     date: today,
+    //     time: time,
+    //     quantity: item.quantity,
+    //     drive_thru: selectDriveThru,
+    //   },
+    // ]);
+
+    // console.log(order);
+
+    menuChoices.forEach((item) => {
+      const order = {
+        id: uuid_v4(),
+        location_id: storeIndex,
+        menu_id: getMenuIndex(item.title),
+        date: today,
+        time: time,
+        quantity: item.quantity,
+        drive_thru: selectDriveThru,
+      };
+
+      appendSpreadsheet(order);
+    });
 
     setStep('confirmation');
   };
