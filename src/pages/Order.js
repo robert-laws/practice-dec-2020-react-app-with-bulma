@@ -1,7 +1,9 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useContext, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
+import LocationsContext from '../context/locations/locationsContext';
+import MenusContext from '../context/menus/menusContext';
 import { SubPage } from '../layout/SubPage';
-import { MenuCard, StoreCard } from '../components';
+import { LocationCard, MenuCard } from '../components';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { v4 as uuid_v4 } from 'uuid';
 
@@ -12,6 +14,70 @@ export const Order = () => {
   const PRIVATE_KEY = process.env.REACT_APP_GOOGLE_SERVICE_PRIVATE_KEY;
 
   const doc = new GoogleSpreadsheet(SPREADSHEET_ID);
+
+  const locationsContext = useContext(LocationsContext);
+  const menusContext = useContext(MenusContext);
+
+  const {
+    locations,
+    location,
+    getLocations,
+    getLocationById,
+    clearLocation,
+  } = locationsContext;
+
+  const { menus, getMenus } = menusContext;
+
+  useEffect(() => {
+    getLocations();
+    getMenus();
+  }, [getLocations, getMenus]);
+
+  const [step, setStep] = useState('store');
+  const [disableStoreCards, setDisableStoreCards] = useState(false);
+
+  const detectStoreSelection = useCallback(
+    (id, cardSelected) => {
+      if (cardSelected) {
+        getLocationById(id);
+        setDisableStoreCards(true);
+      } else {
+        clearLocation();
+        setDisableStoreCards(false);
+      }
+    },
+    [setDisableStoreCards, getLocationById, clearLocation]
+  );
+
+  const [menuChoices, setMenuChoices] = useState([]);
+
+  const detectMenuSelection = useCallback(
+    (menu, selectedQuantity, cardSelected) => {
+      if (cardSelected) {
+        setMenuChoices((prev) => [
+          ...prev.filter((item) => item.id !== menu.id),
+          {
+            id: menu.id,
+            title: menu.title,
+            selectedQuantity,
+            total: parseInt(selectedQuantity) * parseFloat(menu.price),
+          },
+        ]);
+      } else {
+        setMenuChoices((prev) => prev.filter((item) => item.id !== menu.id));
+      }
+    },
+    [setMenuChoices]
+  );
+
+  const [selectDriveThru, setSelectedDriveThru] = useState(false);
+
+  const getTime = (date) => {
+    date.setHours(date.getHours() + Math.round(date.getMinutes() / 60));
+    date.setMinutes(0, 0, 0); // Resets also seconds and milliseconds
+
+    return date.getHours();
+  };
 
   const appendSpreadsheet = async (row) => {
     try {
@@ -29,50 +95,46 @@ export const Order = () => {
     }
   };
 
-  const [step, setStep] = useState('store');
-  const [storeTitle, setStoreTitle] = useState('');
-  const [hasDriveThru, setHasDriveThru] = useState(false);
+  const handlePlaceOrder = () => {
+    const myDate = new Date();
+    const dd = myDate.getDate();
 
-  const [disableStoreCards, setDisableStoreCards] = useState(false);
+    const mm = myDate.getMonth() + 1;
+    const yyyy = myDate.getFullYear();
+    const today = `${mm}/${dd}/${yyyy}`;
 
-  const [selectDriveThru, setSelectedDriveThru] = useState(false);
+    const time = getTime(myDate);
 
-  const [menuChoices, setMenuChoices] = useState([]);
+    // const order = menuChoices.map((item) => [
+    //   {
+    //     id: uuid_v4(),
+    //     location_id: location.id,
+    //     menu_id: item.id,
+    //     date: today,
+    //     time: time,
+    //     quantity: item.selectedQuantity,
+    //     drive_thru: selectDriveThru,
+    //   },
+    // ]);
 
-  const detectStoreSelection = useCallback(
-    (title, driveThru, cardSelected) => {
-      if (cardSelected) {
-        // context getTitle(id)
-        // context getDriveThru(id)
-        setStoreTitle(title);
-        setDisableStoreCards(true);
-        setHasDriveThru(driveThru);
-      } else {
-        setStoreTitle('');
-        setDisableStoreCards(false);
-        setHasDriveThru(false);
-      }
-    },
-    [setStoreTitle, setDisableStoreCards, setHasDriveThru]
-  );
+    // console.log(order);
 
-  const detectMenuSelection = useCallback(
-    (id, selectedQuantity, price, cardSelected) => {
-      if (cardSelected) {
-        setMenuChoices((prev) => [
-          ...prev.filter((item) => item.id !== id),
-          {
-            id,
-            selectedQuantity,
-            total: parseInt(selectedQuantity) * parseFloat(price),
-          },
-        ]);
-      } else {
-        setMenuChoices((prev) => prev.filter((item) => item.id !== id));
-      }
-    },
-    [setMenuChoices]
-  );
+    menuChoices.forEach((item) => {
+      const order = {
+        id: uuid_v4(),
+        location_id: location.id,
+        menu_id: item.id,
+        date: today,
+        time: time,
+        quantity: item.selectedQuantity,
+        drive_thru: selectDriveThru,
+      };
+
+      appendSpreadsheet(order);
+    });
+
+    setStep('confirmation');
+  };
 
   const handleNext = () => {
     if (step === 'store') {
@@ -85,203 +147,152 @@ export const Order = () => {
   const handlePrevious = () => {
     if (step === 'menu') {
       setStep('store');
-      setStoreTitle('');
+      clearLocation();
       setDisableStoreCards(false);
     }
   };
 
-  const getStoreIndex = (store) => {
-    switch (store) {
-      case 'Main Street':
-        return '1';
-      case 'City Mall':
-        return '2';
-      default:
-        break;
-    }
-  };
-
-  const getMenuIndex = (menu) => {
-    switch (menu) {
-      case 'Cafe Latte':
-        return '1';
-      case 'Muffin':
-        return '2';
-      default:
-        break;
-    }
-  };
-
-  const getTime = (date) => {
-    date.setHours(date.getHours() + Math.round(date.getMinutes() / 60));
-    date.setMinutes(0, 0, 0); // Resets also seconds and milliseconds
-
-    return date.getHours();
-  };
-
-  const handlePlaceOrder = () => {
-    const myDate = new Date();
-    const dd = myDate.getDate();
-
-    const mm = myDate.getMonth() + 1;
-    const yyyy = myDate.getFullYear();
-    const today = `${mm}/${dd}/${yyyy}`;
-
-    const time = getTime(myDate);
-
-    const storeIndex = getStoreIndex(storeTitle);
-
-    // const order = menuChoices.map((item) => [
-    //   {
-    //     id: uuid_v4(),
-    //     location_id: storeIndex,
-    //     menu_id: getMenuIndex(item.title),
-    //     date: today,
-    //     time: time,
-    //     quantity: item.quantity,
-    //     drive_thru: selectDriveThru,
-    //   },
-    // ]);
-
-    // console.log(order);
-
-    menuChoices.forEach((item) => {
-      const order = {
-        id: uuid_v4(),
-        location_id: storeIndex,
-        menu_id: getMenuIndex(item.title),
-        date: today,
-        time: time,
-        quantity: item.quantity,
-        drive_thru: selectDriveThru,
-      };
-
-      appendSpreadsheet(order);
-    });
-
-    setStep('confirmation');
-  };
+  if (!locations) {
+    return (
+      <SubPage>
+        <div className='section'>
+          <h1 className='title is-size-3-mobile is-size-1-desktop ml-2'>
+            Shop Example
+          </h1>
+          <h4>No Stores Found</h4>
+        </div>
+      </SubPage>
+    );
+  }
 
   return (
     <SubPage>
       <div className='section'>
-        <h1 className='title is-size-3-mobile is-size-2-desktop ml-2'>
+        <h1 className='title is-size-3-mobile is-size-1-desktop ml-2'>
           Place an Order
         </h1>
+
         {step === 'store' && (
           <Fade delay={500} duration={500}>
             <section
               className={`box ${step === 'store' ? 'showBox' : 'hideBox'}`}
             >
               <h4 className='is-size-3-desktop mb-4'>Select a Store</h4>
-              <div className='columns'>
-                <div className='column'>
-                  <StoreCard
-                    disableCard={disableStoreCards}
-                    sendSelection={detectStoreSelection}
-                    //selected={false}
-                    hasDriveThru={true}
-                    title={'Main Street'}
-                    street={'123 High St.'}
-                  />
-                </div>
-                <div className='column'>
-                  <StoreCard
-                    disableCard={disableStoreCards}
-                    sendSelection={detectStoreSelection}
-                    //selected={false}
-                    title={'City Mall'}
-                    street={'123 High St.'}
-                  />
-                </div>
-              </div>
+              <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
+                {locations !== null &&
+                  locations.map((location) => (
+                    <section
+                      key={location.id}
+                      className='section'
+                      style={{ minWidth: '25rem' }}
+                    >
+                      <div className='card'>
+                        <LocationCard
+                          id={location.id}
+                          location={location}
+                          sendSelection={detectStoreSelection}
+                          disableCard={disableStoreCards}
+                        />
+                      </div>
+                    </section>
+                  ))}
+              </section>
             </section>
           </Fade>
         )}
+
         {step === 'menu' && (
           <Fade delay={500} duration={500}>
             <section
               className={`box ${step === 'menu' ? 'showBox' : 'hideBox'}`}
             >
-              <h4 className='is-size-3-desktop mb-4'>Select a Store</h4>
-              <p>{storeTitle}</p>
-              <p>{hasDriveThru ? 'Drive Thru Option' : ''}</p>
-              <div className='columns'>
-                <div className='column'>
-                  <MenuCard
-                    title={'Cafe Latte'}
-                    description={'Refreshing mix of coffee and milk'}
-                    price={'3.50'}
-                    quantity={'1'}
-                    sendSelection={detectMenuSelection}
-                    cardSelected={false}
-                  />
+              {location && (
+                <div className='box'>
+                  <h4 className='has-text-weight-bold'>{location.title}</h4>
+                  {location.drive_thru && <p>Drive Thru Available</p>}
                 </div>
-                <div className='column'>
-                  <MenuCard
-                    title={'Muffin'}
-                    description={'Tasty treat for morning time'}
-                    price={'2.75'}
-                    quantity={'1'}
-                    sendSelection={detectMenuSelection}
-                    cardSelected={false}
-                  />
-                </div>
-              </div>
+              )}
+              <h4 className='is-size-3-desktop mb-4'>Select from the Menu</h4>
+              {menus !== null && (
+                <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
+                  {menus.map((menu) => (
+                    <section
+                      key={menu.id}
+                      className='section'
+                      style={{ minWidth: '25rem' }}
+                    >
+                      <div className='card'>
+                        <MenuCard
+                          menu={menu}
+                          sendSelection={detectMenuSelection}
+                        />
+                      </div>
+                    </section>
+                  ))}
+                </section>
+              )}
             </section>
           </Fade>
         )}
+
         {step === 'finalize' && (
           <Fade delay={500} duration={500}>
             <section
               className={`box ${step === 'finalize' ? 'showBox' : 'hideBox'}`}
             >
-              <div className='box'>
-                <h4 className='is-size-3-desktop mb-4'>Finalize your Order</h4>
-                <p>Store Pickup: {storeTitle}</p>
-                <p>Menu Items:</p>
-                {menuChoices.map((item, index) => (
-                  <p key={index}>
-                    {item.title}, quantity: {item.quantity}
-                  </p>
-                ))}
-                {hasDriveThru && (
-                  <label className='checkbox'>
-                    <input
-                      checked={selectDriveThru}
-                      onChange={(event) =>
-                        setSelectedDriveThru(event.target.checked)
-                      }
-                      type='checkbox'
-                    />{' '}
-                    Pick up at Drive Thru
-                  </label>
-                )}
-                <p>
-                  <strong>
-                    Total Quantity:{' '}
-                    {menuChoices.reduce(
-                      (sum, item) => sum + parseInt(item.quantity),
-                      0
+              {location && menuChoices.length > 0 && (
+                <section className='section'>
+                  <div className='box'>
+                    <h4 className='is-size-3-desktop mb-4'>
+                      Finalize your Order
+                    </h4>
+                    <p>Store Pickup: {location.title}</p>
+                    <p>Menu Items:</p>
+                    {menuChoices.map((item) => (
+                      <p key={item.id}>
+                        {item.title}, quantity: {item.selectedQuantity}
+                      </p>
+                    ))}
+                    {location.drive_thru && (
+                      <label className='checkbox'>
+                        <input
+                          checked={selectDriveThru}
+                          onChange={(event) =>
+                            setSelectedDriveThru(event.target.checked)
+                          }
+                          type='checkbox'
+                        />{' '}
+                        Pick up at Drive Thru
+                      </label>
                     )}
-                  </strong>
-                </p>
-                <p>
-                  <strong>
-                    Total Price: $
-                    {menuChoices.reduce((sum, item) => sum + item.total, 0)}
-                  </strong>
-                </p>
-              </div>
-              <button
-                className={'button is-primary'}
-                onClick={handlePlaceOrder}
-              >
-                Place Order
-              </button>
+                    <p>
+                      <strong>
+                        Total Quantity:{' '}
+                        {menuChoices.reduce(
+                          (sum, item) => sum + parseInt(item.selectedQuantity),
+                          0
+                        )}
+                      </strong>
+                    </p>
+                    <p>
+                      <strong>
+                        Total Price: $
+                        {menuChoices.reduce((sum, item) => sum + item.total, 0)}
+                      </strong>
+                    </p>
+                  </div>
+                  <button
+                    className={'button is-primary'}
+                    onClick={handlePlaceOrder}
+                  >
+                    Place Order
+                  </button>
+                </section>
+              )}
             </section>
           </Fade>
         )}
+
         {step === 'confirmation' && (
           <Fade delay={500} duration={500}>
             <section
@@ -296,9 +307,10 @@ export const Order = () => {
             </section>
           </Fade>
         )}
+
         {step === 'store' && (
           <button
-            disabled={!storeTitle}
+            disabled={!location}
             className='button is-info'
             onClick={handleNext}
           >
