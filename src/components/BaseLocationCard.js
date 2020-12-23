@@ -24,7 +24,7 @@ export const BaseLocationCard = ({
       <p>
         Opening Times: {open_time} - {close_time}
       </p>
-      {drive_thru && <p>Drive Thru available at list location</p>}
+      {drive_thru && <p>Drive Thru available at this location</p>}
     </div>
   );
 };
