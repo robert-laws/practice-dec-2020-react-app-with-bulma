@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Header, Main, Footer } from './layout';
-import { Home, Stores, Menu, NotFound, Order } from './pages';
-import { StoreExample } from './pages/StoreExample';
+import { Home, Stores, Menu, Order, Data, NotFound } from './pages';
 
 function App() {
   return (
@@ -28,8 +27,8 @@ function App() {
             <Route path='/order'>
               <Home />
             </Route>
-            <Route path='/example'>
-              <StoreExample />
+            <Route path='/data'>
+              <Data />
             </Route>
             <Route path='/*'>
               <NotFound />

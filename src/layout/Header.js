@@ -68,7 +68,7 @@ export const Header = () => {
                 </NavLink>
                 <NavLink
                   className='navbar-item'
-                  to='/'
+                  to='/data'
                   onClick={(event) => {
                     event.target.blur();
                   }}

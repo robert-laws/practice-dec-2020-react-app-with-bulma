@@ -175,174 +175,168 @@ export const Order = () => {
 
   return (
     <SubPage>
-      <div className='section'>
-        <h1 className='title is-size-3-mobile is-size-1-desktop ml-2'>
-          Place an Order
-        </h1>
+      <h1 className='title is-size-3-mobile is-size-1-desktop ml-2'>
+        Place an Order
+      </h1>
 
-        {step === 'store' && (
-          <Fade delay={500} duration={500}>
-            <section
-              className={`box ${step === 'store' ? 'showBox' : 'hideBox'}`}
-            >
-              <h4 className='is-size-3-desktop mb-4'>Select a Store</h4>
-              <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
-                {locations !== null &&
-                  locations.map((location) => (
-                    <section
-                      key={location.id}
-                      className='section'
-                      style={{ minWidth: '25rem' }}
-                    >
-                      <div className='card'>
-                        <LocationCard
-                          id={location.id}
-                          location={location}
-                          sendSelection={detectStoreSelection}
-                          disableCard={disableStoreCards}
-                        />
-                      </div>
-                    </section>
-                  ))}
-              </section>
-            </section>
-          </Fade>
-        )}
-
-        {step === 'menu' && (
-          <Fade delay={500} duration={500}>
-            <section
-              className={`box ${step === 'menu' ? 'showBox' : 'hideBox'}`}
-            >
-              {location && (
-                <div className='box'>
-                  <h4 className='has-text-weight-bold'>{location.title}</h4>
-                  {location.drive_thru && <p>Drive Thru Available</p>}
-                </div>
-              )}
-              <h4 className='is-size-3-desktop mb-4'>Select from the Menu</h4>
-              {menus !== null && (
-                <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
-                  {menus.map((menu) => (
-                    <section
-                      key={menu.id}
-                      className='section'
-                      style={{ minWidth: '25rem' }}
-                    >
-                      <div className='card'>
-                        <MenuCard
-                          menu={menu}
-                          sendSelection={detectMenuSelection}
-                        />
-                      </div>
-                    </section>
-                  ))}
-                </section>
-              )}
-            </section>
-          </Fade>
-        )}
-
-        {step === 'finalize' && (
-          <Fade delay={500} duration={500}>
-            <section
-              className={`box ${step === 'finalize' ? 'showBox' : 'hideBox'}`}
-            >
-              {location && menuChoices.length > 0 && (
-                <section className='section'>
-                  <div className='box'>
-                    <h4 className='is-size-3-desktop mb-4'>
-                      Finalize your Order
-                    </h4>
-                    <p>Store Pickup: {location.title}</p>
-                    <p>Menu Items:</p>
-                    {menuChoices.map((item) => (
-                      <p key={item.id}>
-                        {item.title}, quantity: {item.selectedQuantity}
-                      </p>
-                    ))}
-                    {location.drive_thru && (
-                      <label className='checkbox'>
-                        <input
-                          checked={selectDriveThru}
-                          onChange={(event) =>
-                            setSelectedDriveThru(event.target.checked)
-                          }
-                          type='checkbox'
-                        />{' '}
-                        Pick up at Drive Thru
-                      </label>
-                    )}
-                    <p>
-                      <strong>
-                        Total Quantity:{' '}
-                        {menuChoices.reduce(
-                          (sum, item) => sum + parseInt(item.selectedQuantity),
-                          0
-                        )}
-                      </strong>
-                    </p>
-                    <p>
-                      <strong>
-                        Total Price: $
-                        {menuChoices.reduce((sum, item) => sum + item.total, 0)}
-                      </strong>
-                    </p>
-                  </div>
-                  <button
-                    className={'button is-primary'}
-                    onClick={handlePlaceOrder}
+      {step === 'store' && (
+        <Fade delay={500} duration={500}>
+          <section
+            className={`box ${step === 'store' ? 'showBox' : 'hideBox'}`}
+          >
+            <h4 className='is-size-3-desktop mb-4'>Select a Store</h4>
+            <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
+              {locations !== null &&
+                locations.map((location) => (
+                  <section
+                    key={location.id}
+                    className='section'
+                    style={{ minWidth: '25rem' }}
                   >
-                    Place Order
-                  </button>
-                </section>
-              )}
+                    <div className='card'>
+                      <LocationCard
+                        id={location.id}
+                        location={location}
+                        sendSelection={detectStoreSelection}
+                        disableCard={disableStoreCards}
+                      />
+                    </div>
+                  </section>
+                ))}
             </section>
-          </Fade>
-        )}
+          </section>
+        </Fade>
+      )}
 
-        {step === 'confirmation' && (
-          <Fade delay={500} duration={500}>
-            <section
-              className={`box ${
-                step === 'confirmation' ? 'showBox' : 'hideBox'
-              }`}
-            >
+      {step === 'menu' && (
+        <Fade delay={500} duration={500}>
+          <section className={`box ${step === 'menu' ? 'showBox' : 'hideBox'}`}>
+            {location && (
               <div className='box'>
-                <h4 className='is-size-3-desktop mb-4'>Order Confirmed</h4>
-                <p>Thank you for your order</p>
+                <h4 className='has-text-weight-bold'>{location.title}</h4>
+                {location.drive_thru && <p>Drive Thru Available</p>}
               </div>
-              <button className={'button is-primary'} onClick={restartOrder}>
-                Place Another Order
-              </button>
-            </section>
-          </Fade>
-        )}
+            )}
+            <h4 className='is-size-3-desktop mb-4'>Select from the Menu</h4>
+            {menus !== null && (
+              <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
+                {menus.map((menu) => (
+                  <section
+                    key={menu.id}
+                    className='section'
+                    style={{ minWidth: '25rem' }}
+                  >
+                    <div className='card'>
+                      <MenuCard
+                        menu={menu}
+                        sendSelection={detectMenuSelection}
+                      />
+                    </div>
+                  </section>
+                ))}
+              </section>
+            )}
+          </section>
+        </Fade>
+      )}
 
-        {step === 'store' && (
-          <button
-            disabled={!location}
-            className='button is-info'
-            onClick={handleNext}
+      {step === 'finalize' && (
+        <Fade delay={500} duration={500}>
+          <section
+            className={`box ${step === 'finalize' ? 'showBox' : 'hideBox'}`}
           >
-            Select from the Menu
-          </button>
-        )}
-        {step === 'menu' && (
-          <button
-            disabled={!menuChoices}
-            className='button is-info'
-            onClick={handleNext}
+            {location && menuChoices.length > 0 && (
+              <section className='section'>
+                <div className='box'>
+                  <h4 className='is-size-3-desktop mb-4'>
+                    Finalize your Order
+                  </h4>
+                  <p>Store Pickup: {location.title}</p>
+                  <p>Menu Items:</p>
+                  {menuChoices.map((item) => (
+                    <p key={item.id}>
+                      {item.title}, quantity: {item.selectedQuantity}
+                    </p>
+                  ))}
+                  {location.drive_thru && (
+                    <label className='checkbox'>
+                      <input
+                        checked={selectDriveThru}
+                        onChange={(event) =>
+                          setSelectedDriveThru(event.target.checked)
+                        }
+                        type='checkbox'
+                      />{' '}
+                      Pick up at Drive Thru
+                    </label>
+                  )}
+                  <p>
+                    <strong>
+                      Total Quantity:{' '}
+                      {menuChoices.reduce(
+                        (sum, item) => sum + parseInt(item.selectedQuantity),
+                        0
+                      )}
+                    </strong>
+                  </p>
+                  <p>
+                    <strong>
+                      Total Price: $
+                      {menuChoices.reduce((sum, item) => sum + item.total, 0)}
+                    </strong>
+                  </p>
+                </div>
+                <button
+                  className={'button is-primary'}
+                  onClick={handlePlaceOrder}
+                >
+                  Place Order
+                </button>
+              </section>
+            )}
+          </section>
+        </Fade>
+      )}
+
+      {step === 'confirmation' && (
+        <Fade delay={500} duration={500}>
+          <section
+            className={`box ${step === 'confirmation' ? 'showBox' : 'hideBox'}`}
           >
-            Finalize your Order
-          </button>
-        )}
-        {step === 'menu' && (
-          <button className='button is-warning' onClick={handlePrevious}>
-            Change Store
-          </button>
-        )}
-      </div>
+            <div className='box'>
+              <h4 className='is-size-3-desktop mb-4'>Order Confirmed</h4>
+              <p>Thank you for your order</p>
+            </div>
+            <button className={'button is-primary'} onClick={restartOrder}>
+              Place Another Order
+            </button>
+          </section>
+        </Fade>
+      )}
+
+      {step === 'store' && (
+        <button
+          disabled={!location}
+          className='button is-info'
+          onClick={handleNext}
+        >
+          Select from the Menu
+        </button>
+      )}
+      {step === 'menu' && (
+        <button
+          disabled={!menuChoices}
+          className='button is-info'
+          onClick={handleNext}
+        >
+          Finalize your Order
+        </button>
+      )}
+      {step === 'menu' && (
+        <button className='button is-warning' onClick={handlePrevious}>
+          Change Store
+        </button>
+      )}
     </SubPage>
   );
 };
