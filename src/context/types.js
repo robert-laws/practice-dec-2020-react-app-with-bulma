@@ -5,3 +5,6 @@ export const CLEAR_LOCATION = 'CLEAR_LOCATION';
 
 // MENU
 export const GET_ALL_MENUS = 'GET_ALL_MENUS';
+
+// ORDERS
+export const GET_ALL_ORDERS = 'GET_ALL_ORDERS';

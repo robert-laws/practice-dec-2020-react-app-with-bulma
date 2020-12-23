@@ -1,9 +1,13 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
+import OrdersContext from '../context/orders/ordersContext';
 import { SubPage } from '../layout/SubPage';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import spinner from '../images/spinner.gif';
 
 export const Data = () => {
+  const ordersContext = useContext(OrdersContext);
+  const { orders, getOrders } = ordersContext;
+
   const SPREADSHEET_ID = process.env.REACT_APP_SPREADSHEET_ID;
   const SHEET_ID = process.env.REACT_APP_SHEET_ID;
   const CLIENT_EMAIL = process.env.REACT_APP_GOOGLE_CLIENT_EMAIL;
@@ -14,7 +18,6 @@ export const Data = () => {
     return doc;
   }, [SPREADSHEET_ID]);
 
-  const [sheetRows, getSheetRows] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -30,7 +33,7 @@ export const Data = () => {
         await doc.loadInfo();
         const sheet = doc.sheetsById[SHEET_ID];
         const rows = await sheet.getRows();
-        getSheetRows(rows);
+        getOrders(rows);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -38,7 +41,7 @@ export const Data = () => {
     };
 
     getRows();
-  }, [CLIENT_EMAIL, PRIVATE_KEY, SHEET_ID, getDoc]);
+  }, [CLIENT_EMAIL, PRIVATE_KEY, SHEET_ID, getDoc, getOrders]);
 
   if (loading) {
     return (
@@ -60,7 +63,7 @@ export const Data = () => {
     <SubPage>
       <h1 className='title is-size-3-mobile is-size-2-desktop ml-2'>Data</h1>
       <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
-        {sheetRows.length > 0 && (
+        {orders && (
           <table className='table is-bordered is-striped is-narrow is-hoverable is-fullwidth'>
             <thead>
               <tr>
@@ -74,7 +77,7 @@ export const Data = () => {
               </tr>
             </thead>
             <tbody>
-              {sheetRows.map((row) => (
+              {orders.map((row) => (
                 <tr key={row.id}>
                   <th>{row.id}</th>
                   <td>{row.location_id}</td>
