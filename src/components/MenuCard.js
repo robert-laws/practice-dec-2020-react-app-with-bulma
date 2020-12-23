@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { BaseMenuCard } from './BaseMenuCard';
 
-export const MenuCard = ({
-  title,
-  description,
-  price,
-  quantity = '1',
-  sendSelection,
-  cardSelected = false,
-}) => {
-  const [selected, setSelected] = useState(cardSelected);
+export const MenuCard = ({ menu, sendSelection, quantity = '1' }) => {
+  const [selected, setSelected] = useState(false);
   const [selectedQuantity, setSelectedQuantity] = useState(quantity);
 
   const handleClick = () => {
@@ -21,18 +15,15 @@ export const MenuCard = ({
   };
 
   useEffect(() => {
-    sendSelection(title, selectedQuantity, price, selected);
-  }, [sendSelection, title, selectedQuantity, price, selected]);
+    sendSelection(menu, selectedQuantity, selected);
+  }, [sendSelection, menu, selectedQuantity, selected]);
 
   return (
     <div
       className='card'
       style={{ backgroundColor: selected ? 'lightblue' : 'white' }}
     >
-      <div className='card-content' style={{ minHeight: '10rem' }}>
-        <p className='title'>{title}</p>
-        <p className='subtitle'>{description}</p>
-        <p>${price}</p>
+      <BaseMenuCard {...menu}>
         <div className='select'>
           <select
             disabled={!selected}
@@ -45,7 +36,7 @@ export const MenuCard = ({
             <option value='4'>4</option>
           </select>
         </div>
-      </div>
+      </BaseMenuCard>
       <footer className='card-footer p-2'>
         <button
           className='button is-medium is-fullwidth is-info'

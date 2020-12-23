@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import LocationsContext from '../context/locations/locationsContext';
 import { SubPage } from '../layout/SubPage';
-import { Location } from '../components';
+// import { Location } from '../components';
+import { BaseLocationCard } from '../components/BaseLocationCard';
 
 export const Stores = () => {
   const locationsContext = useContext(LocationsContext);
@@ -30,7 +31,9 @@ export const Stores = () => {
               className='section'
               style={{ minWidth: '25rem' }}
             >
-              <Location {...location} />
+              <div className='card'>
+                <BaseLocationCard {...location} />
+              </div>
             </section>
           ))}
       </section>

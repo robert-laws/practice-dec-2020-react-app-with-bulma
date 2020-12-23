@@ -4,14 +4,14 @@ import App from './App';
 import 'bulma/css/bulma.css';
 import './App.scss';
 import LocationsState from './context/locations/LocationsState';
-import MenuState from './context/menu/MenuState';
+import MenusState from './context/menus/MenusState';
 
 ReactDOM.render(
   <React.StrictMode>
     <LocationsState>
-      <MenuState>
+      <MenusState>
         <App />
-      </MenuState>
+      </MenusState>
     </LocationsState>
   </React.StrictMode>,
   document.getElementById('root')

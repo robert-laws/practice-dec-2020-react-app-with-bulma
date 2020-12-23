@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import hero from '../images/data-viz-cafe-hero.jpg';
-import { Card } from '../components';
 
 export const Home = () => {
   const [progressVal, setProgressVal] = useState(0);
@@ -32,9 +31,7 @@ export const Home = () => {
         </div>
         <div className='container'>
           <div className='columns'>
-            <div className='column is-one-third'>
-              <Card />
-            </div>
+            <div className='column is-one-third'>Card...</div>
             <div className='column is-one-third'>
               <progress
                 className='progress is-primary'

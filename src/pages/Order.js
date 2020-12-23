@@ -42,6 +42,8 @@ export const Order = () => {
   const detectStoreSelection = useCallback(
     (title, driveThru, cardSelected) => {
       if (cardSelected) {
+        // context getTitle(id)
+        // context getDriveThru(id)
         setStoreTitle(title);
         setDisableStoreCards(true);
         setHasDriveThru(driveThru);
@@ -55,14 +57,18 @@ export const Order = () => {
   );
 
   const detectMenuSelection = useCallback(
-    (title, quantity, price, cardSelected) => {
+    (id, selectedQuantity, price, cardSelected) => {
       if (cardSelected) {
         setMenuChoices((prev) => [
-          ...prev.filter((item) => item.title !== title),
-          { title, quantity, total: parseInt(quantity) * parseFloat(price) },
+          ...prev.filter((item) => item.id !== id),
+          {
+            id,
+            selectedQuantity,
+            total: parseInt(selectedQuantity) * parseFloat(price),
+          },
         ]);
       } else {
-        setMenuChoices((prev) => prev.filter((item) => item.title !== title));
+        setMenuChoices((prev) => prev.filter((item) => item.id !== id));
       }
     },
     [setMenuChoices]
@@ -173,7 +179,7 @@ export const Order = () => {
                   <StoreCard
                     disableCard={disableStoreCards}
                     sendSelection={detectStoreSelection}
-                    selected={false}
+                    //selected={false}
                     hasDriveThru={true}
                     title={'Main Street'}
                     street={'123 High St.'}
@@ -183,7 +189,7 @@ export const Order = () => {
                   <StoreCard
                     disableCard={disableStoreCards}
                     sendSelection={detectStoreSelection}
-                    selected={false}
+                    //selected={false}
                     title={'City Mall'}
                     street={'123 High St.'}
                   />
