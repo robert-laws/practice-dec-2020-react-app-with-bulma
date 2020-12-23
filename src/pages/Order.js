@@ -152,6 +152,14 @@ export const Order = () => {
     }
   };
 
+  const restartOrder = () => {
+    clearLocation();
+    setMenuChoices([]);
+    setSelectedDriveThru(false);
+    setDisableStoreCards(false);
+    setStep('store');
+  };
+
   if (!locations) {
     return (
       <SubPage>
@@ -304,6 +312,9 @@ export const Order = () => {
                 <h4 className='is-size-3-desktop mb-4'>Order Confirmed</h4>
                 <p>Thank you for your order</p>
               </div>
+              <button className={'button is-primary'} onClick={restartOrder}>
+                Place Another Order
+              </button>
             </section>
           </Fade>
         )}
