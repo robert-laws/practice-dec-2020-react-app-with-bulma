@@ -20,7 +20,7 @@ export const LocationCard = ({
   return (
     <div
       className='card'
-      style={{ backgroundColor: selected ? 'lightblue' : 'white' }}
+      style={{ border: selected ? '1px solid red' : 'none' }}
     >
       <BaseLocationCard {...location} />
       <footer className='card-footer p-2'>

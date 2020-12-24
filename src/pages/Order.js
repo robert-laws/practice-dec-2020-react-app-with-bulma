@@ -142,6 +142,7 @@ export const Order = () => {
     } else if (step === 'menu') {
       setStep('finalize');
     }
+    window.scrollTo(0, 0);
   };
 
   const handlePrevious = () => {
@@ -149,7 +150,11 @@ export const Order = () => {
       setStep('store');
       clearLocation();
       setDisableStoreCards(false);
+    } else if (step === 'finalize') {
+      setStep('menu');
+      setMenuChoices([]);
     }
+    window.scrollTo(0, 0);
   };
 
   const restartOrder = () => {
@@ -184,7 +189,7 @@ export const Order = () => {
           <section
             className={`box ${step === 'store' ? 'showBox' : 'hideBox'}`}
           >
-            <h4 className='is-size-3-desktop mb-4'>Select a Store</h4>
+            <h4 className='is-size-3-desktop mb-4'>Select a Location</h4>
             <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
               {locations !== null &&
                 locations.map((location) => (
@@ -213,29 +218,110 @@ export const Order = () => {
           <section className={`box ${step === 'menu' ? 'showBox' : 'hideBox'}`}>
             {location && (
               <div className='box'>
-                <h4 className='has-text-weight-bold'>{location.title}</h4>
+                <h4>
+                  Your Selected Location:{' '}
+                  <span className='has-text-weight-bold'>{location.title}</span>
+                </h4>
                 {location.drive_thru && <p>Drive Thru Available</p>}
               </div>
             )}
             <h4 className='is-size-3-desktop mb-4'>Select from the Menu</h4>
-            {menus !== null && (
-              <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
-                {menus.map((menu) => (
-                  <section
-                    key={menu.id}
-                    className='section'
-                    style={{ minWidth: '25rem' }}
-                  >
-                    <div className='card'>
-                      <MenuCard
-                        menu={menu}
-                        sendSelection={detectMenuSelection}
-                      />
-                    </div>
-                  </section>
-                ))}
-              </section>
-            )}
+
+            <h4 className='is-size-3-desktop ml-2'>Drinks</h4>
+            <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
+              {menus !== null &&
+                menus.map((menu) =>
+                  menu.category === 'drink' ? (
+                    <section
+                      key={menu.id}
+                      className='section'
+                      style={{ minWidth: '25rem' }}
+                    >
+                      <div className='card'>
+                        <MenuCard
+                          menu={menu}
+                          sendSelection={detectMenuSelection}
+                          bgColor='#F9E1F7'
+                        />
+                      </div>
+                    </section>
+                  ) : (
+                    ''
+                  )
+                )}
+            </section>
+
+            <h4 className='is-size-3-desktop ml-2'>Food</h4>
+            <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
+              {menus !== null &&
+                menus.map((menu) =>
+                  menu.category === 'food' ? (
+                    <section
+                      key={menu.id}
+                      className='section'
+                      style={{ minWidth: '25rem' }}
+                    >
+                      <div className='card'>
+                        <MenuCard
+                          menu={menu}
+                          sendSelection={detectMenuSelection}
+                          bgColor='#9BE5FF'
+                        />
+                      </div>
+                    </section>
+                  ) : (
+                    ''
+                  )
+                )}
+            </section>
+
+            <h4 className='is-size-3-desktop ml-2'>Merchandise</h4>
+            <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
+              {menus !== null &&
+                menus.map((menu) =>
+                  menu.category === 'merchandise' ? (
+                    <section
+                      key={menu.id}
+                      className='section'
+                      style={{ minWidth: '25rem' }}
+                    >
+                      <div className='card'>
+                        <MenuCard
+                          menu={menu}
+                          sendSelection={detectMenuSelection}
+                          bgColor='#FCD9AA'
+                        />
+                      </div>
+                    </section>
+                  ) : (
+                    ''
+                  )
+                )}
+            </section>
+
+            <h4 className='is-size-3-desktop ml-2'>Gift Cards</h4>
+            <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
+              {menus !== null &&
+                menus.map((menu) =>
+                  menu.category === 'gift cards' ? (
+                    <section
+                      key={menu.id}
+                      className='section'
+                      style={{ minWidth: '25rem' }}
+                    >
+                      <div className='card'>
+                        <MenuCard
+                          menu={menu}
+                          sendSelection={detectMenuSelection}
+                          bgColor='#C3FFE1'
+                        />
+                      </div>
+                    </section>
+                  ) : (
+                    ''
+                  )
+                )}
+            </section>
           </section>
         </Fade>
       )}
@@ -251,7 +337,7 @@ export const Order = () => {
                   <h4 className='is-size-3-desktop mb-4'>
                     Finalize your Order
                   </h4>
-                  <p>Store Pickup: {location.title}</p>
+                  <p>Pickup Location: {location.title}</p>
                   <p>Menu Items:</p>
                   {menuChoices.map((item) => (
                     <p key={item.id}>
@@ -291,6 +377,12 @@ export const Order = () => {
                   onClick={handlePlaceOrder}
                 >
                   Place Order
+                </button>
+                <button className='button is-info' onClick={handlePrevious}>
+                  Change Menu Selections
+                </button>
+                <button className='button is-warning' onClick={restartOrder}>
+                  Cancel Order
                 </button>
               </section>
             )}

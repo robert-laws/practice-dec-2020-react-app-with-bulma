@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BaseMenuCard } from './BaseMenuCard';
 
-export const MenuCard = ({ menu, sendSelection, quantity = '1' }) => {
+export const MenuCard = ({ menu, sendSelection, bgColor, quantity = '1' }) => {
   const [selected, setSelected] = useState(false);
   const [selectedQuantity, setSelectedQuantity] = useState(quantity);
 
@@ -21,9 +21,11 @@ export const MenuCard = ({ menu, sendSelection, quantity = '1' }) => {
   return (
     <div
       className='card'
-      style={{ backgroundColor: selected ? 'lightblue' : 'white' }}
+      style={{
+        border: selected ? '1px solid red' : 'none',
+      }}
     >
-      <BaseMenuCard {...menu}>
+      <BaseMenuCard {...menu} bgColor={bgColor}>
         <div className='select'>
           <select
             disabled={!selected}

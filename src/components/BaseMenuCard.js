@@ -6,9 +6,10 @@ export const BaseMenuCard = ({
   price,
   seasonal,
   children,
+  bgColor = 'white',
 }) => {
   return (
-    <div className='card-content'>
+    <div className='card-content' style={{ backgroundColor: bgColor }}>
       <p className='title'>{title}</p>
       <p className='subtitle'>Category: {category}</p>
       <hr />
