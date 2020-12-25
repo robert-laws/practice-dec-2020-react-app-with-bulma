@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import OrdersContext from '../context/orders/ordersContext';
-import { PageTitle } from '../components';
+import { PageTitle, Spinner } from '../components';
 import { SubPage } from '../layout';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
-import spinner from '../images/spinner.gif';
 
 export const Data = () => {
   const ordersContext = useContext(OrdersContext);
@@ -53,7 +52,7 @@ export const Data = () => {
           style={{ minHeight: '30rem' }}
         >
           <div>
-            <img src={spinner} alt='spinner' />
+            <Spinner />
           </div>
         </section>
       </SubPage>

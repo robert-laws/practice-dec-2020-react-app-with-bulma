@@ -9,3 +9,4 @@ export { LocationCard } from './LocationCard';
 export { Modal } from './Modal';
 
 export { PageTitle } from './PageTitle';
+export { Spinner } from './Spinner';
