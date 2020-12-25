@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import OrdersContext from '../context/orders/ordersContext';
-import { SubPage } from '../layout/SubPage';
+import { PageTitle } from '../components';
+import { SubPage } from '../layout';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import spinner from '../images/spinner.gif';
 
@@ -46,7 +47,7 @@ export const Data = () => {
   if (loading) {
     return (
       <SubPage>
-        <h1 className='title is-size-3-mobile is-size-2-desktop ml-2'>Data</h1>
+        <PageTitle>Data</PageTitle>
         <section
           className='is-flex is-flex-direction-row is-justify-content-center is-align-items-center'
           style={{ minHeight: '30rem' }}

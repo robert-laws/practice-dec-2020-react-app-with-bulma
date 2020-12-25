@@ -2,8 +2,8 @@ import React, { useState, useCallback, useContext, useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
 import LocationsContext from '../context/locations/locationsContext';
 import MenusContext from '../context/menus/menusContext';
-import { SubPage } from '../layout/SubPage';
-import { LocationCard, MenuCard } from '../components';
+import { SubPage } from '../layout';
+import { LocationCard, MenuCard, PageTitle } from '../components';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import { v4 as uuid_v4 } from 'uuid';
 
@@ -169,9 +169,7 @@ export const Order = () => {
     return (
       <SubPage>
         <div className='section'>
-          <h1 className='title is-size-3-mobile is-size-1-desktop ml-2'>
-            Shop Example
-          </h1>
+          <PageTitle>Shop Example</PageTitle>
           <h4>No Stores Found</h4>
         </div>
       </SubPage>
@@ -180,9 +178,7 @@ export const Order = () => {
 
   return (
     <SubPage>
-      <h1 className='title is-size-3-mobile is-size-1-desktop ml-2'>
-        Place an Order
-      </h1>
+      <PageTitle>Place an Order</PageTitle>
 
       {step === 'store' && (
         <Fade delay={500} duration={500}>

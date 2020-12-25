@@ -1,10 +1,11 @@
 import React from 'react';
-import { SubPage } from '../layout/SubPage';
+import { PageTitle } from '../components';
+import { SubPage } from '../layout';
 
 export const Week3 = () => {
   return (
     <SubPage>
-      <h1 className='title is-size-3-mobile is-size-2-desktop ml-2'>Week 3</h1>
+      <PageTitle>Week 3</PageTitle>
     </SubPage>
   );
 };

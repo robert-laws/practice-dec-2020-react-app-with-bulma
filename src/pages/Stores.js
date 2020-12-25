@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
 import LocationsContext from '../context/locations/locationsContext';
 import ModalContext from '../context/modal/modalContext';
-import { SubPage } from '../layout/SubPage';
+import { SubPage } from '../layout';
 // import { Location } from '../components';
-import { BaseLocationCard } from '../components/BaseLocationCard';
+import { BaseLocationCard, PageTitle } from '../components';
 
 export const Stores = () => {
   const [locationId, setLocationId] = useState(null);
@@ -37,7 +37,7 @@ export const Stores = () => {
 
   return (
     <SubPage>
-      <h1 className='title is-size-3-mobile is-size-2-desktop ml-2'>Stores</h1>
+      <PageTitle>Stores</PageTitle>
       <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
         {locations !== null &&
           locations.map((location) => (

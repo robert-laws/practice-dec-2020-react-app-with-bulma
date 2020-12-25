@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from 'react';
 import MenusContext from '../context/menus/menusContext';
 import ModalContext from '../context/modal/modalContext';
-import { SubPage } from '../layout/SubPage';
-import { BaseMenuCard } from '../components';
+import { SubPage } from '../layout';
+import { BaseMenuCard, PageTitle } from '../components';
 
 export const Menu = () => {
   const [menuId, setMenuId] = useState(null);
@@ -36,7 +36,7 @@ export const Menu = () => {
 
   return (
     <SubPage>
-      <h1 className='title is-size-3-mobile is-size-2-desktop ml-2'>Menu</h1>
+      <PageTitle>Menu</PageTitle>
       <h4 className='is-size-3-desktop ml-2'>Drinks</h4>
       <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
         {menus !== null &&
