@@ -67,7 +67,7 @@ export const Data = () => {
           <table className='table is-bordered is-striped is-narrow is-hoverable is-fullwidth'>
             <thead>
               <tr>
-                <th>id</th>
+                <th>row #</th>
                 <th>location id</th>
                 <th>menu id</th>
                 <th>date</th>
@@ -77,9 +77,9 @@ export const Data = () => {
               </tr>
             </thead>
             <tbody>
-              {orders.map((row) => (
+              {orders.map((row, index) => (
                 <tr key={row.id}>
-                  <th>{row.id}</th>
+                  <th>{index + 1}</th>
                   <td>{row.location_id}</td>
                   <td>{row.menu_id}</td>
                   <td>{row.date}</td>
