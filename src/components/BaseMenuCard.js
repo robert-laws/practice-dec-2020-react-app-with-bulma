@@ -1,20 +1,12 @@
 import React from 'react';
 
-export const BaseMenuCard = ({
-  title,
-  category,
-  price,
-  seasonal,
-  children,
-  bgColor = 'white',
-}) => {
+export const BaseMenuCard = ({ title, children, bgColor = 'white' }) => {
   return (
-    <div className='card-content' style={{ backgroundColor: bgColor }}>
-      <p className='title'>{title}</p>
-      <p className='subtitle'>Category: {category}</p>
-      <hr />
-      <p>Price: ${price}</p>
-      {seasonal && <p>Available Seasonally</p>}
+    <div
+      className='card-content'
+      style={{ backgroundColor: bgColor, flex: '1', borderRadius: '0.25rem' }}
+    >
+      <p className='has-text-weight-bold is-size-5'>{title}</p>
       {children}
     </div>
   );

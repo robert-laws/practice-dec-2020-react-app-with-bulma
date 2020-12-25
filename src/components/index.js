@@ -5,3 +5,5 @@ export { MenuCard } from './MenuCard';
 export { Location } from './Location';
 
 export { LocationCard } from './LocationCard';
+
+export { Modal } from './Modal';

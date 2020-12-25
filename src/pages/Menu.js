@@ -1,15 +1,30 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import MenusContext from '../context/menus/menusContext';
+import ModalContext from '../context/modal/modalContext';
 import { SubPage } from '../layout/SubPage';
 import { BaseMenuCard } from '../components';
 
 export const Menu = () => {
+  const [menuId, setMenuId] = useState(null);
+
   const menusContext = useContext(MenusContext);
   const { menus, getMenus } = menusContext;
+
+  const modalContext = useContext(ModalContext);
+  const { updateModal } = modalContext;
 
   useEffect(() => {
     getMenus();
   }, [getMenus]);
+
+  useEffect(() => {
+    if (menuId) {
+      updateModal({
+        group: 'menus',
+        obj: menus.find((menu) => menu.id === menuId),
+      });
+    }
+  }, [menuId, menus, updateModal]);
 
   if (!menus) {
     return (
@@ -30,10 +45,19 @@ export const Menu = () => {
               <section
                 key={menu.id}
                 className='section'
-                style={{ minWidth: '25rem' }}
+                style={{ width: '16rem' }}
               >
-                <div className='card'>
+                <div
+                  className='card p-2 is-flex is-flex-direction-column is-justify-content-space-between'
+                  style={{ minHeight: '12rem' }}
+                >
                   <BaseMenuCard {...menu} bgColor='#F9E1F7' />
+                  <button
+                    className='button is-fullwidth mt-2'
+                    onClick={() => setMenuId(menu.id)}
+                  >
+                    Learn More
+                  </button>
                 </div>
               </section>
             ) : (
@@ -50,10 +74,19 @@ export const Menu = () => {
               <section
                 key={menu.id}
                 className='section'
-                style={{ minWidth: '25rem' }}
+                style={{ width: '16rem' }}
               >
-                <div className='card'>
+                <div
+                  className='card p-2 is-flex is-flex-direction-column is-justify-content-space-between'
+                  style={{ minHeight: '12rem' }}
+                >
                   <BaseMenuCard {...menu} bgColor='#9BE5FF' />
+                  <button
+                    className='button is-fullwidth mt-2'
+                    onClick={() => setMenuId(menu.id)}
+                  >
+                    Learn More
+                  </button>
                 </div>
               </section>
             ) : (
@@ -70,10 +103,19 @@ export const Menu = () => {
               <section
                 key={menu.id}
                 className='section'
-                style={{ minWidth: '25rem' }}
+                style={{ width: '16rem' }}
               >
-                <div className='card'>
+                <div
+                  className='card p-2 is-flex is-flex-direction-column is-justify-content-space-between'
+                  style={{ minHeight: '12rem' }}
+                >
                   <BaseMenuCard {...menu} bgColor='#FCD9AA' />
+                  <button
+                    className='button is-fullwidth mt-2'
+                    onClick={() => setMenuId(menu.id)}
+                  >
+                    Learn More
+                  </button>
                 </div>
               </section>
             ) : (
@@ -90,10 +132,19 @@ export const Menu = () => {
               <section
                 key={menu.id}
                 className='section'
-                style={{ minWidth: '25rem' }}
+                style={{ width: '16rem' }}
               >
-                <div className='card'>
+                <div
+                  className='card p-2 is-flex is-flex-direction-column is-justify-content-space-between'
+                  style={{ minHeight: '12rem' }}
+                >
                   <BaseMenuCard {...menu} bgColor='#C3FFE1' />
+                  <button
+                    className='button is-fullwidth mt-2'
+                    onClick={() => setMenuId(menu.id)}
+                  >
+                    Learn More
+                  </button>
                 </div>
               </section>
             ) : (

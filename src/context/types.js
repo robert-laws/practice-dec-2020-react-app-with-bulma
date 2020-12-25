@@ -8,3 +8,6 @@ export const GET_ALL_MENUS = 'GET_ALL_MENUS';
 
 // ORDERS
 export const GET_ALL_ORDERS = 'GET_ALL_ORDERS';
+
+// Modal
+export const UPDATE_MODAL_ACTIVE = 'UPDATE_MODAL_ACTIVE';

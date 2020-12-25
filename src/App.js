@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Header, Main, Footer } from './layout';
 import { Home, Stores, Menu, Order, Data, NotFound } from './pages';
+import { Modal } from './components';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           </Switch>
         </Main>
         <Footer />
+        <Modal />
       </div>
     </Router>
   );

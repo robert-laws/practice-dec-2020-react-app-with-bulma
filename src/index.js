@@ -6,13 +6,16 @@ import './App.scss';
 import LocationsState from './context/locations/LocationsState';
 import MenusState from './context/menus/MenusState';
 import OrdersState from './context/orders/OrdersState';
+import ModalState from './context/modal/ModalState';
 
 ReactDOM.render(
   <React.StrictMode>
     <LocationsState>
       <MenusState>
         <OrdersState>
-          <App />
+          <ModalState>
+            <App />
+          </ModalState>
         </OrdersState>
       </MenusState>
     </LocationsState>
