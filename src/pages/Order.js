@@ -237,7 +237,7 @@ export const Order = () => {
                       className='section'
                       style={{ minWidth: '25rem' }}
                     >
-                      <div className='card'>
+                      <div className='card p-2'>
                         <MenuCard
                           menu={menu}
                           sendSelection={detectMenuSelection}
@@ -261,7 +261,7 @@ export const Order = () => {
                       className='section'
                       style={{ minWidth: '25rem' }}
                     >
-                      <div className='card'>
+                      <div className='card p-2'>
                         <MenuCard
                           menu={menu}
                           sendSelection={detectMenuSelection}
@@ -285,7 +285,7 @@ export const Order = () => {
                       className='section'
                       style={{ minWidth: '25rem' }}
                     >
-                      <div className='card'>
+                      <div className='card p-2'>
                         <MenuCard
                           menu={menu}
                           sendSelection={detectMenuSelection}
@@ -309,7 +309,7 @@ export const Order = () => {
                       className='section'
                       style={{ minWidth: '25rem' }}
                     >
-                      <div className='card'>
+                      <div className='card p-2'>
                         <MenuCard
                           menu={menu}
                           sendSelection={detectMenuSelection}

@@ -20,7 +20,7 @@ export const MenuCard = ({ menu, sendSelection, bgColor, quantity = '1' }) => {
 
   return (
     <div
-      className='card'
+      className='card p-2'
       style={{
         border: selected ? '1px solid red' : 'none',
       }}
@@ -39,7 +39,7 @@ export const MenuCard = ({ menu, sendSelection, bgColor, quantity = '1' }) => {
           </select>
         </div>
       </BaseMenuCard>
-      <footer className='card-footer p-2'>
+      <footer className='card-footer mt-2'>
         <button
           className='button is-medium is-fullwidth is-info'
           onClick={handleClick}

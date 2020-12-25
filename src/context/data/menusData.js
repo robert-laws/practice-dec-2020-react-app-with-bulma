@@ -120,7 +120,7 @@ export const menus = [
   },
   {
     id: 18,
-    title: 'Tomato and Mozzarella Sandwich',
+    title: 'Turkey Sandwich',
     category: 'food',
     price: 4.5,
     seasonal: false,
