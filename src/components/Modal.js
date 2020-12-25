@@ -11,7 +11,10 @@ export const Modal = () => {
         className='modal-background'
         onClick={() => updateModal({ group: null, obj: null })}
       ></div>
-      <div className='modal-content has-background-white py-5 px-5'>
+      <div
+        className='modal-content has-background-white py-5 px-5'
+        style={{ borderRadius: '0.25rem' }}
+      >
         <h3 className='title'>
           {selectionObject ? selectionObject.title : ''}
         </h3>
