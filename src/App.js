@@ -1,6 +1,21 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Header, Main, Footer } from './layout';
-import { Home, Stores, Menu, Order, Data, NotFound } from './pages';
+import {
+  Home,
+  Stores,
+  Menu,
+  Order,
+  Data,
+  Concepts,
+  Resources,
+  About,
+  Week1,
+  Week2,
+  Week3,
+  Week4,
+  Week5,
+  NotFound,
+} from './pages';
 import { Modal } from './components';
 
 function App() {
@@ -30,6 +45,30 @@ function App() {
             </Route>
             <Route path='/data'>
               <Data />
+            </Route>
+            <Route path='/concepts'>
+              <Concepts />
+            </Route>
+            <Route path='/resources'>
+              <Resources />
+            </Route>
+            <Route path='/about'>
+              <About />
+            </Route>
+            <Route path='/week1'>
+              <Week1 />
+            </Route>
+            <Route path='/week2'>
+              <Week2 />
+            </Route>
+            <Route path='/week3'>
+              <Week3 />
+            </Route>
+            <Route path='/week4'>
+              <Week4 />
+            </Route>
+            <Route path='/week5'>
+              <Week5 />
             </Route>
             <Route path='/*'>
               <NotFound />

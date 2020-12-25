@@ -36,7 +36,7 @@ export const Header = () => {
           <div className='navbar-start'>
             <div className='navbar-item has-dropdown is-hoverable'>
               <NavLink className='navbar-link' to='/'>
-                Go to the Data Viz Cafe
+                Visit the Data Viz Cafe
               </NavLink>
               <div className='navbar-dropdown is-boxed'>
                 <NavLink
@@ -77,9 +77,6 @@ export const Header = () => {
                 </NavLink>
               </div>
             </div>
-            <NavLink className='navbar-item' to='/'>
-              Data Visualization Concepts
-            </NavLink>
             <div className='navbar-item has-dropdown is-hoverable'>
               <NavLink className='navbar-link' to='/'>
                 Class Weeks
@@ -87,7 +84,7 @@ export const Header = () => {
               <div className='navbar-dropdown is-boxed'>
                 <NavLink
                   className='navbar-item'
-                  to='/'
+                  to='/week1'
                   onClick={(event) => {
                     event.target.blur();
                   }}
@@ -96,7 +93,7 @@ export const Header = () => {
                 </NavLink>
                 <NavLink
                   className='navbar-item'
-                  to='/'
+                  to='/week2'
                   onClick={(event) => {
                     event.target.blur();
                   }}
@@ -105,7 +102,7 @@ export const Header = () => {
                 </NavLink>
                 <NavLink
                   className='navbar-item'
-                  to='/'
+                  to='/week3'
                   onClick={(event) => {
                     event.target.blur();
                   }}
@@ -114,7 +111,7 @@ export const Header = () => {
                 </NavLink>
                 <NavLink
                   className='navbar-item'
-                  to='/'
+                  to='/week4'
                   onClick={(event) => {
                     event.target.blur();
                   }}
@@ -123,7 +120,7 @@ export const Header = () => {
                 </NavLink>
                 <NavLink
                   className='navbar-item'
-                  to='/'
+                  to='/week5'
                   onClick={(event) => {
                     event.target.blur();
                   }}
@@ -132,7 +129,13 @@ export const Header = () => {
                 </NavLink>
               </div>
             </div>
-            <NavLink className='navbar-item' to='/'>
+            <NavLink className='navbar-item' to='/concepts'>
+              Data Visualization Concepts
+            </NavLink>
+            <NavLink className='navbar-item' to='/resources'>
+              Resources
+            </NavLink>
+            <NavLink className='navbar-item' to='/about'>
               About
             </NavLink>
           </div>
@@ -141,11 +144,11 @@ export const Header = () => {
             <div className='navbar-item'>
               <div className='field is-grouped'>
                 <p className='control'>
-                  <NavLink className='button is-info' to='/menu'>
+                  <NavLink className='button is-info' to='/order'>
                     <span className='icon'>
                       <i className='fas fa-shopping-cart'></i>
                     </span>
-                    <span>Your Order</span>
+                    <span>Place an Order</span>
                   </NavLink>
                 </p>
               </div>
