@@ -76,11 +76,37 @@ export const Week1 = () => {
         <SectionTitle id='elements-of-data-visualizations'>
           Elements of Data Visualizations
         </SectionTitle>
+        <SectionContent>
+          <SectionList
+            lists={[
+              {
+                items: [
+                  {
+                    type: 'text',
+                    text:
+                      'Labels - including titles, axes (if applicable), legend, and data points',
+                  },
+                  {
+                    type: 'text',
+                    text:
+                      'Colors - used to add more information to help the viewer understand it better',
+                  },
+                  {
+                    type: 'text',
+                    text:
+                      'Data - comprising the basis of any type of graph or chart content',
+                  },
+                ],
+              },
+            ]}
+          />
+        </SectionContent>
       </SectionGroup>
       <SectionGroup>
         <SectionTitle id='examples-of-good-and-bad-data-visualizations'>
           Examples of Good and Bad Data Visualizations
         </SectionTitle>
+        <SectionContent></SectionContent>
       </SectionGroup>
     </SubPage>
   );
