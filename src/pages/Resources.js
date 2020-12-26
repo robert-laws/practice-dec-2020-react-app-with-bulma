@@ -3,6 +3,7 @@ import { PageTitle, SectionList } from '../components';
 import { SubPage } from '../layout';
 import {
   tableau,
+  online,
   recommended,
   international,
   unitedstates,
@@ -16,6 +17,10 @@ export const Resources = () => {
     <SubPage>
       <PageTitle>Resources</PageTitle>
       <SectionList title='Tableau' lists={tableau} />
+      <SectionList
+        title='E-Books from the Library and Online Learning Resources'
+        lists={online}
+      />
       <SectionList
         title='Datasets'
         lists={[

@@ -16,6 +16,32 @@ export const tableau = [
   },
 ];
 
+export const online = [
+  {
+    items: [
+      {
+        type: 'link',
+        url:
+          'https://wrlc-gu.primo.exlibrisgroup.com/permalink/01WRLC_GUNIV/13v2bp2/alma991037142451904111',
+        text:
+          'Course Textbook: Storytelling with data : a data visualization guide for business professionals',
+      },
+      {
+        type: 'link',
+        url:
+          'https://wrlc-gu.primo.exlibrisgroup.com/permalink/01WRLC_GUNIV/13v2bp2/alma991015283829704111',
+        text:
+          'Additional Reading: Data Points Visualization That Means Something',
+      },
+      {
+        type: 'link',
+        url: 'https://guides.library.georgetown.edu/linkedinlearning',
+        text: 'LinkedIn Learning',
+      },
+    ],
+  },
+];
+
 export const recommended = [
   {
     title: 'Recommended',
