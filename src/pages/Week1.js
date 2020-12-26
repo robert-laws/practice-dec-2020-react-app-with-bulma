@@ -1,7 +1,17 @@
 import React from 'react';
-import { PageTitle, SectionList, SectionTitle } from '../components';
+import {
+  PageTitle,
+  SectionList,
+  SectionGroup,
+  SectionTitle,
+  SectionContent,
+  Link,
+  Image,
+} from '../components';
 import { SubPage } from '../layout';
 import { week1 } from '../context/data/weeksData';
+import dataVizHistory1 from '../images/data-viz-history-1.png';
+import dataVizHistory2 from '../images/data-viz-history-2.jpg';
 
 export const Week1 = () => {
   return (
@@ -12,19 +22,66 @@ export const Week1 = () => {
         lists={week1}
       />
       <hr />
-      <SectionTitle id='what-is-data-visualization'>
-        What is Data Visualization
-      </SectionTitle>
-
-      <SectionTitle id='brief-history-of-data-visualization'>
-        Brief History of Data Visualization
-      </SectionTitle>
-      <SectionTitle id='elements-of-data-visualizations'>
-        Elements of Data Visualizations
-      </SectionTitle>
-      <SectionTitle id='examples-of-good-and-bad-data-visualizations'>
-        Examples of Good and Bad Data Visualizations
-      </SectionTitle>
+      <SectionGroup>
+        <SectionTitle id='what-is-data-visualization'>
+          What is Data Visualization
+        </SectionTitle>
+        <SectionContent>
+          <blockquote>
+            "Being able to <strong>visualize data</strong> and tell stories with
+            it is key to turning it into <strong>information</strong> that can
+            be used to drive better <strong>decision making</strong>." - Cole
+            Nussbaumer Knaflic. <em>Storytelling with Data</em>
+          </blockquote>
+          <blockquote>
+            "Visualization is a medium: a way to explore, present, and express{' '}
+            <strong>meaning in data</strong>." - Nathan Yau,{' '}
+            <em>Data Points</em>
+          </blockquote>
+        </SectionContent>
+      </SectionGroup>
+      <SectionGroup>
+        <SectionTitle id='brief-history-of-data-visualization'>
+          Brief History of Data Visualization
+        </SectionTitle>
+        <SectionContent>
+          <Link
+            url='https://www.tableau.com/learn/articles/best-beautiful-data-visualization-examples'
+            text='Data is beautiful: 10 of the best data visualization examples from history to today'
+          />
+          <h4 className='is-size-6 mt-4 mb-0'>
+            Two Famous Early Data Visualizations
+          </h4>
+          <div className='columns'>
+            <div className='column is-three-fifths'>
+              <Image
+                url='https://en.wikipedia.org/wiki/Charles_Joseph_Minard'
+                src={dataVizHistory1}
+                alt='Napoleon March Map'
+                captionText='Napoleon March Map'
+              />
+            </div>
+            <div className='column is-two-fifths'>
+              <Image
+                url='https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak'
+                src={dataVizHistory2}
+                alt='1854 Broad Street Cholera Outbreak Map'
+                captionText='1854 Broad Street Cholera Outbreak Map'
+              />
+            </div>
+          </div>
+        </SectionContent>
+      </SectionGroup>
+      <SectionGroup>
+        <SectionTitle id='elements-of-data-visualizations'>
+          Elements of Data Visualizations
+        </SectionTitle>
+      </SectionGroup>
+      <SectionGroup>
+        <SectionTitle id='examples-of-good-and-bad-data-visualizations'>
+          Examples of Good and Bad Data Visualizations
+        </SectionTitle>
+      </SectionGroup>
     </SubPage>
   );
 };

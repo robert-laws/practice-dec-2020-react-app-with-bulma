@@ -12,8 +12,11 @@ export { PageTitle } from './PageTitle';
 export { Subtitle } from './Subtitle';
 export { SimpleText } from './SimpleText';
 export { Link } from './Link';
+export { Image } from './Image';
 export { ListUnordered } from './ListUnordered';
 export { Spinner } from './Spinner';
 
-export { SectionList } from './SectionList';
+export { SectionGroup } from './SectionGroup';
 export { SectionTitle } from './SectionTitle';
+export { SectionContent } from './SectionContent';
+export { SectionList } from './SectionList';
