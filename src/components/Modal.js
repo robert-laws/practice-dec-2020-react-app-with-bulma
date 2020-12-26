@@ -12,14 +12,14 @@ export const Modal = () => {
         onClick={() => updateModal({ group: null, obj: null })}
       ></div>
       <div className='modal-card'>
-        <header class='modal-card-head'>
-          <p class='modal-card-title'>
+        <header className='modal-card-head'>
+          <p className='modal-card-title'>
             {selectionGroup && selectionGroup === 'locations'
               ? 'Location Information'
               : 'Menu Item Details'}
           </p>
           <button
-            class='delete'
+            className='delete'
             aria-label='close'
             onClick={() => updateModal({ group: null, obj: null })}
           ></button>
