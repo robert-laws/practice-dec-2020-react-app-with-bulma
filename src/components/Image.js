@@ -17,7 +17,7 @@ export const Image = ({ url, src, alt, captionText = null }) => {
       {captionText && (
         <div className='has-text-centered'>
           <p>
-            <a href={url}>{captionText}</a>
+            {url ? <a href={url}>{captionText}</a> : <span>{captionText}</span>}
           </p>
         </div>
       )}

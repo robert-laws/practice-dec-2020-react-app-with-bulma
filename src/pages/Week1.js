@@ -7,11 +7,19 @@ import {
   SectionContent,
   Link,
   Image,
+  Subtitle,
+  SectionSubtitle,
 } from '../components';
 import { SubPage } from '../layout';
 import { week1 } from '../context/data/weeksData';
 import dataVizHistory1 from '../images/data-viz-history-1.png';
 import dataVizHistory2 from '../images/data-viz-history-2.jpg';
+import badDv1 from '../images/bad-dv-1.png';
+import badDv2 from '../images/bad-dv-2.jpg';
+import badDv3 from '../images/bad-dv-3.png';
+import badDv5 from '../images/bad-dv-5.jpg';
+import goodDv1 from '../images/good-dv-1.png';
+import goodDv2 from '../images/good-dv-2.png';
 
 export const Week1 = () => {
   return (
@@ -22,6 +30,7 @@ export const Week1 = () => {
         lists={week1}
       />
       <hr />
+      <Subtitle>Theory</Subtitle>
       <SectionGroup>
         <SectionTitle id='what-is-data-visualization'>
           What is Data Visualization
@@ -49,9 +58,9 @@ export const Week1 = () => {
             url='https://www.tableau.com/learn/articles/best-beautiful-data-visualization-examples'
             text='Data is beautiful: 10 of the best data visualization examples from history to today'
           />
-          <h4 className='is-size-6 mt-4 mb-0'>
+          <SectionSubtitle>
             Two Famous Early Data Visualizations
-          </h4>
+          </SectionSubtitle>
           <div className='columns'>
             <div className='column is-three-fifths'>
               <Image
@@ -84,6 +93,11 @@ export const Week1 = () => {
                   {
                     type: 'text',
                     text:
+                      'Data - comprising the basis of any type of graph or chart content',
+                  },
+                  {
+                    type: 'text',
+                    text:
                       'Labels - including titles, axes (if applicable), legend, and data points',
                   },
                   {
@@ -94,7 +108,12 @@ export const Week1 = () => {
                   {
                     type: 'text',
                     text:
-                      'Data - comprising the basis of any type of graph or chart content',
+                      'Scale or Proportion - show relationships between parts of the data',
+                  },
+                  {
+                    type: 'text',
+                    text:
+                      'Clarity - differences in shapes, color, and relationships are easy to identify',
                   },
                 ],
               },
@@ -106,7 +125,91 @@ export const Week1 = () => {
         <SectionTitle id='examples-of-good-and-bad-data-visualizations'>
           Examples of Good and Bad Data Visualizations
         </SectionTitle>
+        <SectionContent>
+          <SectionSubtitle>Bad Data Visualizations</SectionSubtitle>
+          <div className='columns'>
+            <div className='column'>
+              <Image
+                src={badDv1}
+                alt='Bad Data Visualization'
+                captionText='Bad'
+              />
+            </div>
+            <div className='column'>
+              <Image
+                src={badDv2}
+                alt='Bad Data Visualization'
+                captionText='Bad'
+              />
+            </div>
+          </div>
+          <div className='columns'>
+            <div className='column'>
+              <Image
+                src={badDv5}
+                alt='Bad Data Visualization'
+                captionText='Bad'
+              />
+            </div>
+            <div className='column'>
+              <Image
+                src={badDv3}
+                alt='Bad Data Visualization'
+                captionText='Bad'
+              />
+            </div>
+          </div>
+        </SectionContent>
+      </SectionGroup>
+      <SectionGroup>
+        <SectionContent>
+          <SectionSubtitle>Good Data Visualizations</SectionSubtitle>
+          <div className='columns'>
+            <div className='column'>
+              <Image
+                src={goodDv1}
+                alt='Good Data Visualization'
+                captionText='Good'
+              />
+            </div>
+            <div className='column'>
+              <Image
+                src={goodDv2}
+                alt='Good Data Visualization'
+                captionText='Good'
+              />
+            </div>
+          </div>
+        </SectionContent>
+      </SectionGroup>
+
+      <Subtitle>Tableau</Subtitle>
+      <SectionGroup>
+        <SectionTitle id='connecting-to-data'>Connecting to Data</SectionTitle>
         <SectionContent></SectionContent>
+      </SectionGroup>
+
+      <Subtitle>Charts & Graphs</Subtitle>
+      <SectionGroup>
+        <SectionTitle id='bar-chart'>Bar Chart</SectionTitle>
+        <SectionContent>
+          <p>Used to show numerical comparisons across categories.</p>
+        </SectionContent>
+      </SectionGroup>
+      <SectionGroup>
+        <SectionTitle id='multiset-bar-chart'>Multiset Bar Chart</SectionTitle>
+        <SectionContent>
+          <p>
+            Similar to a bar chart, adds two or more data series to show
+            numerical comparisons across categories.
+          </p>
+        </SectionContent>
+      </SectionGroup>
+      <SectionGroup>
+        <SectionTitle id='pie-chart'>Pie Chart</SectionTitle>
+        <SectionContent>
+          <p>Used to show proportions and percentages between categories.</p>
+        </SectionContent>
       </SectionGroup>
     </SubPage>
   );

@@ -20,3 +20,4 @@ export { SectionGroup } from './SectionGroup';
 export { SectionTitle } from './SectionTitle';
 export { SectionContent } from './SectionContent';
 export { SectionList } from './SectionList';
+export { SectionSubtitle } from './SectionSubtitle';
