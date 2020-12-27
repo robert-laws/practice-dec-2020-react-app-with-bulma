@@ -59,8 +59,12 @@ export const week1 = [
   {
     title: 'Charts & Graphs',
     items: [
-      { type: 'link', url: '#bar-Chart', text: 'Bar Chart' },
-      { type: 'link', url: '#multiset-bar-chart', text: 'Multiset Bar Chart' },
+      { type: 'link', url: '#column-chart', text: 'Column Chart' },
+      {
+        type: 'link',
+        url: '#multiset-column-chart',
+        text: 'Multiset Column Chart',
+      },
       { type: 'link', url: '#pie-chart', text: 'Pie Chart' },
     ],
   },

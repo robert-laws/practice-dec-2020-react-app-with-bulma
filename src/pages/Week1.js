@@ -20,6 +20,9 @@ import badDv3 from '../images/bad-dv-3.png';
 import badDv5 from '../images/bad-dv-5.jpg';
 import goodDv1 from '../images/good-dv-1.png';
 import goodDv2 from '../images/good-dv-2.png';
+import barChartExample from '../images/bar-chart-example.png';
+import multisetBarChartExample from '../images/multiset-bar-chart-example.png';
+import pieChartExample from '../images/pie-chart-example.png';
 
 export const Week1 = () => {
   return (
@@ -191,24 +194,60 @@ export const Week1 = () => {
 
       <Subtitle>Charts & Graphs</Subtitle>
       <SectionGroup>
-        <SectionTitle id='bar-chart'>Bar Chart</SectionTitle>
+        <SectionTitle id='column-chart'>Column Chart</SectionTitle>
         <SectionContent>
-          <p>Used to show numerical comparisons across categories.</p>
+          <div class='columns is-mobile'>
+            <div class='column is-three-fifths is-offset-one-fifth'>
+              <Image
+                src={barChartExample}
+                alt='Column Chart'
+                captionText='Column Chart Example'
+              />
+            </div>
+          </div>
+          <p>
+            Column Charts (or Bar Charts when the 'bars' are horizontal) are
+            used to show numerical comparisons across categories.
+          </p>
         </SectionContent>
       </SectionGroup>
+
       <SectionGroup>
-        <SectionTitle id='multiset-bar-chart'>Multiset Bar Chart</SectionTitle>
+        <SectionTitle id='multiset-column-chart'>
+          Multiset Column Chart
+        </SectionTitle>
         <SectionContent>
+          <div class='columns is-mobile'>
+            <div class='column is-three-fifths is-offset-one-fifth'>
+              <Image
+                src={multisetBarChartExample}
+                alt='Multiset Column Chart'
+                captionText='Multiset Column Chart Example'
+              />
+            </div>
+          </div>
           <p>
-            Similar to a bar chart, adds two or more data series to show
-            numerical comparisons across categories.
+            Similar to a column chart, a Multiset Column Chart displays two or
+            more data series to show numerical comparisons across categories.
           </p>
         </SectionContent>
       </SectionGroup>
       <SectionGroup>
         <SectionTitle id='pie-chart'>Pie Chart</SectionTitle>
         <SectionContent>
-          <p>Used to show proportions and percentages between categories.</p>
+          <div class='columns is-mobile'>
+            <div class='column is-three-fifths is-offset-one-fifth'>
+              <Image
+                src={pieChartExample}
+                alt='Pie Chart'
+                captionText='Pie Chart Example'
+              />
+            </div>
+          </div>
+          <p>
+            A Pie Chart is used to show proportions and percentages between
+            categories.
+          </p>
         </SectionContent>
       </SectionGroup>
     </SubPage>
