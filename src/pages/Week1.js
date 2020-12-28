@@ -189,7 +189,20 @@ export const Week1 = () => {
       <Subtitle>Tableau</Subtitle>
       <SectionGroup>
         <SectionTitle id='connecting-to-data'>Connecting to Data</SectionTitle>
-        <SectionContent></SectionContent>
+        <SectionContent>
+          <div class='columns is-mobile'>
+            <div class='column is-three-fifths is-offset-one-fifth'>
+              <iframe
+                width='800'
+                height='450'
+                src='https://www.youtube.com/embed/38KhvGwZgUg'
+                frameborder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </SectionContent>
       </SectionGroup>
 
       <Subtitle>Charts & Graphs</Subtitle>
