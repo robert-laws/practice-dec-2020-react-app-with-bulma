@@ -47,7 +47,6 @@ export const week1 = [
         url: '#labeling-visualizations',
         text: 'Labeling Visualizations',
       },
-      { type: 'link', url: '#formatting-data', text: 'Formatting Data' },
       {
         type: 'link',
         url: '#sorting-and-filtering',

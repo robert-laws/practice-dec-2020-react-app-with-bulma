@@ -212,7 +212,17 @@ export const Week1 = () => {
         </SectionTitle>
         <SectionContent>
           <div class='columns is-mobile'>
-            <div class='column is-three-fifths is-offset-one-fifth'>video</div>
+            <div class='column is-three-fifths is-offset-one-fifth'>
+              <iframe
+                title='Tableau Interface Walkthrough'
+                width='800'
+                height='450'
+                src='https://www.youtube.com/embed/EYBgwHA8YuM'
+                frameborder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </SectionContent>
       </SectionGroup>
@@ -232,15 +242,6 @@ export const Week1 = () => {
         <SectionTitle id='labeling-visualizations'>
           Labeling Visualizations
         </SectionTitle>
-        <SectionContent>
-          <div class='columns is-mobile'>
-            <div class='column is-three-fifths is-offset-one-fifth'>video</div>
-          </div>
-        </SectionContent>
-      </SectionGroup>
-
-      <SectionGroup>
-        <SectionTitle id='formatting-data'>Formatting Data</SectionTitle>
         <SectionContent>
           <div class='columns is-mobile'>
             <div class='column is-three-fifths is-offset-one-fifth'>video</div>
