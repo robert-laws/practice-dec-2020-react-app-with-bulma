@@ -195,12 +195,76 @@ export const Week1 = () => {
               <iframe
                 width='800'
                 height='450'
-                src='https://www.youtube.com/embed/38KhvGwZgUg'
+                src='https://www.youtube.com/embed/FDxkvi1DZls'
                 frameborder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
                 allowfullscreen
               ></iframe>
             </div>
+          </div>
+        </SectionContent>
+      </SectionGroup>
+
+      <SectionGroup>
+        <SectionTitle id='interface-walkthrough'>
+          Interface Walkthrough
+        </SectionTitle>
+        <SectionContent>
+          <div class='columns is-mobile'>
+            <div class='column is-three-fifths is-offset-one-fifth'>video</div>
+          </div>
+        </SectionContent>
+      </SectionGroup>
+
+      <SectionGroup>
+        <SectionTitle id='basics-of-building-visualizations'>
+          Basics of Building Visualizations
+        </SectionTitle>
+        <SectionContent>
+          <div class='columns is-mobile'>
+            <div class='column is-three-fifths is-offset-one-fifth'>video</div>
+          </div>
+        </SectionContent>
+      </SectionGroup>
+
+      <SectionGroup>
+        <SectionTitle id='labeling-visualizations'>
+          Labeling Visualizations
+        </SectionTitle>
+        <SectionContent>
+          <div class='columns is-mobile'>
+            <div class='column is-three-fifths is-offset-one-fifth'>video</div>
+          </div>
+        </SectionContent>
+      </SectionGroup>
+
+      <SectionGroup>
+        <SectionTitle id='formatting-data'>Formatting Data</SectionTitle>
+        <SectionContent>
+          <div class='columns is-mobile'>
+            <div class='column is-three-fifths is-offset-one-fifth'>video</div>
+          </div>
+        </SectionContent>
+      </SectionGroup>
+
+      <SectionGroup>
+        <SectionTitle id='sorting-and-filtering'>
+          Sorting and Filtering
+        </SectionTitle>
+        <SectionContent>
+          <div class='columns is-mobile'>
+            <div class='column is-three-fifths is-offset-one-fifth'>video</div>
+          </div>
+        </SectionContent>
+      </SectionGroup>
+
+      <SectionGroup>
+        <SectionTitle id='exporting-visualizations'>
+          Exporting Visualizations
+        </SectionTitle>
+        <SectionContent>
+          <div class='columns is-mobile'>
+            <div class='column is-three-fifths is-offset-one-fifth'>video</div>
           </div>
         </SectionContent>
       </SectionGroup>
