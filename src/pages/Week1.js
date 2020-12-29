@@ -193,6 +193,7 @@ export const Week1 = () => {
           <div class='columns is-mobile'>
             <div class='column is-three-fifths is-offset-one-fifth'>
               <iframe
+                title='Connecting to Data in Tableau'
                 width='800'
                 height='450'
                 src='https://www.youtube.com/embed/FDxkvi1DZls'
