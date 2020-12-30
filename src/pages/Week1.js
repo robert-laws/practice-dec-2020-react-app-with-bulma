@@ -233,7 +233,17 @@ export const Week1 = () => {
         </SectionTitle>
         <SectionContent>
           <div class='columns is-mobile'>
-            <div class='column is-three-fifths is-offset-one-fifth'>video</div>
+            <div class='column is-three-fifths is-offset-one-fifth'>
+              <iframe
+                title='Basics of Building Visualizations'
+                width='800'
+                height='450'
+                src='https://www.youtube.com/embed/KhY4qndWhQY'
+                frameborder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </SectionContent>
       </SectionGroup>
