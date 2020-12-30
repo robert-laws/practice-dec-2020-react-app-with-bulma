@@ -49,8 +49,13 @@ export const week1 = [
       },
       {
         type: 'link',
-        url: '#sorting-and-filtering',
-        text: 'Sorting and Filtering',
+        url: '#sorting',
+        text: 'Sorting',
+      },
+      {
+        type: 'link',
+        url: '#filtering',
+        text: 'Filtering',
       },
       {
         type: 'link',

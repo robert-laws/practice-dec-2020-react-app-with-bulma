@@ -250,9 +250,16 @@ export const Week1 = () => {
       </SectionGroup>
 
       <SectionGroup>
-        <SectionTitle id='sorting-and-filtering'>
-          Sorting and Filtering
-        </SectionTitle>
+        <SectionTitle id='sorting'>Sorting</SectionTitle>
+        <SectionContent>
+          <div class='columns is-mobile'>
+            <div class='column is-three-fifths is-offset-one-fifth'>video</div>
+          </div>
+        </SectionContent>
+      </SectionGroup>
+
+      <SectionGroup>
+        <SectionTitle id='filtering'>Filtering</SectionTitle>
         <SectionContent>
           <div class='columns is-mobile'>
             <div class='column is-three-fifths is-offset-one-fifth'>video</div>
