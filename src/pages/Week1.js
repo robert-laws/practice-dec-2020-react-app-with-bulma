@@ -254,7 +254,17 @@ export const Week1 = () => {
         </SectionTitle>
         <SectionContent>
           <div class='columns is-mobile'>
-            <div class='column is-three-fifths is-offset-one-fifth'>video</div>
+            <div class='column is-three-fifths is-offset-one-fifth'>
+              <iframe
+                title='Labeling Visualizations'
+                width='800'
+                height='450'
+                src='https://www.youtube.com/embed/etCFY-uM1X8'
+                frameborder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </SectionContent>
       </SectionGroup>
@@ -263,7 +273,17 @@ export const Week1 = () => {
         <SectionTitle id='sorting'>Sorting</SectionTitle>
         <SectionContent>
           <div class='columns is-mobile'>
-            <div class='column is-three-fifths is-offset-one-fifth'>video</div>
+            <div class='column is-three-fifths is-offset-one-fifth'>
+              <iframe
+                title='Sorting'
+                width='800'
+                height='450'
+                src='https://www.youtube.com/embed/YyPrWrQih1M'
+                frameborder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </SectionContent>
       </SectionGroup>
@@ -272,7 +292,17 @@ export const Week1 = () => {
         <SectionTitle id='filtering'>Filtering</SectionTitle>
         <SectionContent>
           <div class='columns is-mobile'>
-            <div class='column is-three-fifths is-offset-one-fifth'>video</div>
+            <div class='column is-three-fifths is-offset-one-fifth'>
+              <iframe
+                title='Filtering'
+                width='800'
+                height='450'
+                src='https://www.youtube.com/embed/F4DGioZAvwg'
+                frameborder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </SectionContent>
       </SectionGroup>
@@ -283,7 +313,17 @@ export const Week1 = () => {
         </SectionTitle>
         <SectionContent>
           <div class='columns is-mobile'>
-            <div class='column is-three-fifths is-offset-one-fifth'>video</div>
+            <div class='column is-three-fifths is-offset-one-fifth'>
+              <iframe
+                title='Exporting Visualizations'
+                width='800'
+                height='450'
+                src='https://www.youtube.com/embed/jUHcs7C9uA8'
+                frameborder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </SectionContent>
       </SectionGroup>
@@ -310,7 +350,7 @@ export const Week1 = () => {
 
       <SectionGroup>
         <SectionTitle id='multiset-column-chart'>
-          Multiset Column Chart
+          Multi-set Column Chart
         </SectionTitle>
         <SectionContent>
           <div class='columns is-mobile'>
@@ -323,7 +363,7 @@ export const Week1 = () => {
             </div>
           </div>
           <p>
-            Similar to a column chart, a Multiset Column Chart displays two or
+            Similar to a column chart, a Multi-set Column Chart displays two or
             more data series to show numerical comparisons across categories.
           </p>
         </SectionContent>
