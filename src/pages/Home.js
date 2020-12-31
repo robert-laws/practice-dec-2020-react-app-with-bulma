@@ -44,7 +44,7 @@ export const Home = () => {
         <div className='container'>
           <div className='columns'>
             <div className='column is-three-fifths is-offset-one-fifth'>
-              <h2 className='subtitle is-size-2-desktop'>
+              <div>
                 <Slide big left>
                   <h1 className='title is-size-2-desktop has-text-centered'>
                     Big Taste and Style
@@ -61,7 +61,7 @@ export const Home = () => {
                     </div>
                   </div>
                 </Slide>
-              </h2>
+              </div>
             </div>
           </div>
         </div>
