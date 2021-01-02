@@ -21,14 +21,13 @@ export const About = () => {
           </div>
           <div className='block'>
             <p>
-              Another key goal of this website is to help students understand
-              the process of creating data. This is done by replicating the
-              online cafe storefront experience within the website. Students can
-              place order in the store by first selecting a location and then
-              items from a menu to order. Each time an order is placed, data is
-              created. Students can view the data being created in real-time,
-              replicating a real-world experience of how a business would
-              collect data.
+              The aim of this website is to help students understand the process
+              of creating data. This is done by replicating the online cafe
+              storefront experience within the website. Students can place order
+              in the store by first selecting a location and then items from a
+              menu to order. Each time an order is placed, data is created.
+              Students can view the data being created in real-time, replicating
+              a real-world experience of how a business would collect data.
             </p>
           </div>
           <div className='block'>
