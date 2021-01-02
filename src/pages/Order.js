@@ -413,7 +413,7 @@ export const Order = () => {
       )}
       {step === 'menu' && (
         <button
-          disabled={!menuChoices}
+          disabled={!menuChoices || menuChoices.length === 0}
           className='button is-info'
           onClick={handleNext}
         >

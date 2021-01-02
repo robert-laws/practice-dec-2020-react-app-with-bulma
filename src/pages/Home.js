@@ -1,6 +1,6 @@
 import React from 'react';
 import Slide from 'react-reveal/Slide';
-import hero from '../images/data-viz-cafe-hero-v2.png';
+import hero from '../images/home-page/data-viz-cafe-hero-v2.png';
 // import paperCupArtisticSmall from '../images/home-page/paper-cup-artistic-small.png';
 // import cafeShopSmall from '../images/home-page/cafe-shop-small.png';
 import cafeInterior from '../images/home-page/data-viz-cafe-interior.png';
