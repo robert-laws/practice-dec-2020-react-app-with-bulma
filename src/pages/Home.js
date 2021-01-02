@@ -1,8 +1,11 @@
 import React from 'react';
 import Slide from 'react-reveal/Slide';
-import hero from '../images/data-viz-cafe-hero.jpg';
-import paperCupArtisticSmall from '../images/home-page/paper-cup-artistic-small.png';
-import cafeShopSmall from '../images/home-page/cafe-shop-small.png';
+import hero from '../images/data-viz-cafe-hero-v2.png';
+// import paperCupArtisticSmall from '../images/home-page/paper-cup-artistic-small.png';
+// import cafeShopSmall from '../images/home-page/cafe-shop-small.png';
+import cafeInterior from '../images/home-page/data-viz-cafe-interior.png';
+import locationSuburban from '../images/home-page/data-viz-stores-suburban.jpg';
+import cafeSetting from '../images/home-page/data-viz-cafe-setting.png';
 
 export const Home = () => {
   return (
@@ -54,7 +57,7 @@ export const Home = () => {
                     <div className='is-flex is-flex-direction-column is-justify-content-center is-align-items-center'>
                       <img
                         className='image mx-5'
-                        src={paperCupArtisticSmall}
+                        src={cafeInterior}
                         alt='Paper Coffee Cup'
                       />
                     </div>
@@ -96,12 +99,53 @@ export const Home = () => {
                     <div className='is-flex is-flex-direction-column is-justify-content-center is-align-items-center'>
                       <img
                         className='image mx-5'
-                        src={cafeShopSmall}
+                        src={locationSuburban}
                         alt='Cafe Shop'
                       />
                     </div>
                     <div className='is-flex is-flex-direction-column is-justify-content-center is-align-items-center mx-5'>
                       <div className='kpi-3'>24 Store Locations</div>
+                    </div>
+                  </div>
+                </Slide>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        className='my-6 has-background-danger-light'
+        style={{ minHeight: '550px' }}
+      >
+        <section className='section'>
+          <div className='container'>
+            <div className='columns'>
+              <div className='column is-three-fifths is-offset-one-fifth'>
+                <h2 className='subtitle is-size-2-desktop'>Text...</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section className='section'>
+        <div className='container'>
+          <div className='columns'>
+            <div className='column is-three-fifths-desktop is-offset-one-fifth-desktop'>
+              <div>
+                <Slide big left>
+                  <h1 className='title is-size-2-desktop has-text-centered'>
+                    A Business on the Rise
+                  </h1>
+                  <div className='is-flex-desktop is-flex-direction-row is-justify-content-center '>
+                    <div className='is-flex is-flex-direction-column is-justify-content-center is-align-items-center'>
+                      <img
+                        className='image mx-5'
+                        src={cafeSetting}
+                        alt='Cafe Shop'
+                      />
+                    </div>
+                    <div className='is-flex is-flex-direction-column is-justify-content-center is-align-items-center mx-5'>
+                      <div className='kpi-4'>5 Millions in Sales in 2020</div>
                     </div>
                   </div>
                 </Slide>
