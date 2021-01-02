@@ -22,7 +22,7 @@ export const LocationCard = ({
       className='card'
       style={{ border: selected ? '1px solid red' : 'none' }}
     >
-      <BaseLocationCard {...location} />
+      <BaseLocationCard card='order' {...location} />
       <footer className='card-footer p-2'>
         <button
           disabled={disableCard && !selected}

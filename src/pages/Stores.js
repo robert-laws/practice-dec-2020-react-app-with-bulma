@@ -48,7 +48,7 @@ export const Stores = () => {
             >
               <div
                 className='card p-2 is-flex is-flex-direction-column is-justify-content-space-between'
-                style={{ minHeight: '12rem' }}
+                style={{ minHeight: '21.5rem' }}
               >
                 <BaseLocationCard {...location} />
                 <button
