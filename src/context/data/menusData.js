@@ -50,7 +50,7 @@ export const menus = [
   },
   {
     id: 8,
-    title: 'White Chocolate Mocha',
+    title: 'Strawberry Frappe',
     category: 'drink',
     price: 4,
     seasonal: true,

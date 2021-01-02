@@ -1,13 +1,25 @@
 import React from 'react';
 
-export const BaseMenuCard = ({ title, children, bgColor = 'white' }) => {
+export const BaseMenuCard = ({ title, price, children, bgColor = 'white' }) => {
+  const imgUrl = `img/${title
+    .replace(/\s+/g, '-')
+    .toLowerCase()}-thumbnail.jpg`;
+
   return (
     <div
-      className='card-content is-flex is-flex-direction-row is-justify-content-space-between is-flex-wrap-wrap'
+      className='card-content is-flex is-flex-direction-column is-flex-wrap-wrap'
       style={{ backgroundColor: bgColor, flex: '1', borderRadius: '0.25rem' }}
     >
-      <p className='has-text-weight-bold title is-size-5'>{title}</p>
-      {children}
+      <div className='is-flex is-flex-direction-row is-justify-content-space-between is-flex-wrap-wrap'>
+        <p className='has-text-weight-bold title is-size-5'>{title}</p>
+        {children}
+      </div>
+      <div>
+        <p className='mb-4'>Price: ${price.toFixed(2)}</p>
+      </div>
+      <div className='is-flex is-justify-content-center'>
+        <img className='box' src={imgUrl} alt={title} />
+      </div>
     </div>
   );
 };

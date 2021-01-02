@@ -49,7 +49,7 @@ export const Menu = () => {
               >
                 <div
                   className='card p-2 is-flex is-flex-direction-column is-justify-content-space-between'
-                  style={{ minHeight: '12rem' }}
+                  style={{ minHeight: '21.5rem' }}
                 >
                   <BaseMenuCard {...menu} bgColor='#F9E1F7' />
                   <button
@@ -78,7 +78,7 @@ export const Menu = () => {
               >
                 <div
                   className='card p-2 is-flex is-flex-direction-column is-justify-content-space-between'
-                  style={{ minHeight: '12rem' }}
+                  style={{ minHeight: '21.5rem' }}
                 >
                   <BaseMenuCard {...menu} bgColor='#9BE5FF' />
                   <button
@@ -107,7 +107,7 @@ export const Menu = () => {
               >
                 <div
                   className='card p-2 is-flex is-flex-direction-column is-justify-content-space-between'
-                  style={{ minHeight: '12rem' }}
+                  style={{ minHeight: '21.5rem' }}
                 >
                   <BaseMenuCard {...menu} bgColor='#FCD9AA' />
                   <button
@@ -136,7 +136,7 @@ export const Menu = () => {
               >
                 <div
                   className='card p-2 is-flex is-flex-direction-column is-justify-content-space-between'
-                  style={{ minHeight: '12rem' }}
+                  style={{ minHeight: '21.5rem' }}
                 >
                   <BaseMenuCard {...menu} bgColor='#C3FFE1' />
                   <button
