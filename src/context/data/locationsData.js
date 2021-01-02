@@ -11,8 +11,8 @@ export const locations = [
     service_population: 522000,
     drive_thru: false,
     location_type: 'urban',
-    open_time: 8,
-    close_time: 19,
+    open_time: 7,
+    close_time: 21,
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ export const locations = [
     drive_thru: false,
     location_type: 'suburban',
     open_time: 8,
-    close_time: 19,
+    close_time: 20,
   },
   {
     id: 4,
@@ -57,7 +57,7 @@ export const locations = [
     drive_thru: true,
     location_type: 'suburban',
     open_time: 8,
-    close_time: 19,
+    close_time: 20,
   },
   {
     id: 5,
@@ -71,8 +71,8 @@ export const locations = [
     service_population: 673000,
     drive_thru: false,
     location_type: 'urban',
-    open_time: 8,
-    close_time: 19,
+    open_time: 6,
+    close_time: 22,
   },
   {
     id: 6,
@@ -86,8 +86,8 @@ export const locations = [
     service_population: 519000,
     drive_thru: true,
     location_type: 'urban',
-    open_time: 8,
-    close_time: 19,
+    open_time: 7,
+    close_time: 20,
   },
   {
     id: 7,
@@ -102,7 +102,7 @@ export const locations = [
     drive_thru: true,
     location_type: 'suburban',
     open_time: 8,
-    close_time: 19,
+    close_time: 20,
   },
   {
     id: 8,
@@ -117,7 +117,7 @@ export const locations = [
     drive_thru: false,
     location_type: 'suburban',
     open_time: 8,
-    close_time: 19,
+    close_time: 20,
   },
   {
     id: 9,
@@ -132,7 +132,7 @@ export const locations = [
     drive_thru: false,
     location_type: 'rural',
     open_time: 8,
-    close_time: 19,
+    close_time: 20,
   },
   {
     id: 10,
@@ -146,8 +146,8 @@ export const locations = [
     service_population: 336000,
     drive_thru: true,
     location_type: 'suburban',
-    open_time: 8,
-    close_time: 19,
+    open_time: 6,
+    close_time: 20,
   },
   {
     id: 11,
@@ -161,8 +161,8 @@ export const locations = [
     service_population: 340000,
     drive_thru: false,
     location_type: 'urban',
-    open_time: 8,
-    close_time: 19,
+    open_time: 7,
+    close_time: 22,
   },
   {
     id: 12,
@@ -177,7 +177,7 @@ export const locations = [
     drive_thru: false,
     location_type: 'suburban',
     open_time: 8,
-    close_time: 19,
+    close_time: 20,
   },
   {
     id: 13,
@@ -191,7 +191,7 @@ export const locations = [
     service_population: 462000,
     drive_thru: false,
     location_type: 'urban',
-    open_time: 8,
+    open_time: 6,
     close_time: 19,
   },
   {
@@ -206,8 +206,8 @@ export const locations = [
     service_population: 188000,
     drive_thru: false,
     location_type: 'urban',
-    open_time: 8,
-    close_time: 19,
+    open_time: 6,
+    close_time: 21,
   },
   {
     id: 15,
@@ -222,7 +222,7 @@ export const locations = [
     drive_thru: false,
     location_type: 'suburban',
     open_time: 8,
-    close_time: 19,
+    close_time: 20,
   },
   {
     id: 16,
@@ -251,7 +251,7 @@ export const locations = [
     service_population: 110000,
     drive_thru: false,
     location_type: 'suburban',
-    open_time: 8,
+    open_time: 6,
     close_time: 19,
   },
   {
@@ -282,7 +282,7 @@ export const locations = [
     drive_thru: false,
     location_type: 'suburban',
     open_time: 8,
-    close_time: 19,
+    close_time: 20,
   },
   {
     id: 20,
@@ -311,8 +311,8 @@ export const locations = [
     service_population: 87000,
     drive_thru: false,
     location_type: 'suburban',
-    open_time: 8,
-    close_time: 19,
+    open_time: 7,
+    close_time: 22,
   },
   {
     id: 22,
