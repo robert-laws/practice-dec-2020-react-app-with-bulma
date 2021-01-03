@@ -38,7 +38,7 @@ export const Stores = () => {
   return (
     <SubPage>
       <PageTitle>Stores</PageTitle>
-      <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
+      <section className='is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-center'>
         {locations !== null &&
           locations.map((location) => (
             <section

@@ -185,7 +185,7 @@ export const Order = () => {
           <section
             className={`box ${step === 'store' ? 'showBox' : 'hideBox'}`}
           >
-            <h4 className='is-size-3-desktop mb-4'>
+            <h4 className='is-size-3-desktop is-size-4-mobile mb-4'>
               Step 1: Select a Location
             </h4>
             <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
@@ -220,14 +220,16 @@ export const Order = () => {
                   Your Selected Location:{' '}
                   <span className='has-text-weight-bold'>{location.title}</span>
                 </h4>
-                {location.drive_thru && <p>Drive Thru Available</p>}
+                {location.drive_thru && (
+                  <p>Drive Thru Available at this location</p>
+                )}
               </div>
             )}
-            <h4 className='is-size-3-desktop mb-4'>
+            <h4 className='is-size-3-desktop is-size-4-mobile mb-4'>
               Step 2: Select from the Menu
             </h4>
 
-            <h4 className='is-size-3-desktop ml-2'>Drinks</h4>
+            <h4 className='is-size-3-desktop is-size-4-mobile ml-2'>Drinks</h4>
             <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
               {menus !== null &&
                 menus.map((menu) =>
@@ -237,7 +239,7 @@ export const Order = () => {
                       className='section'
                       style={{ minWidth: '27rem' }}
                     >
-                      <div className='card p-2'>
+                      <div className='p-2'>
                         <MenuCard
                           menu={menu}
                           sendSelection={detectMenuSelection}
@@ -251,7 +253,7 @@ export const Order = () => {
                 )}
             </section>
 
-            <h4 className='is-size-3-desktop ml-2'>Food</h4>
+            <h4 className='is-size-3-desktop is-size-4-mobile ml-2'>Food</h4>
             <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
               {menus !== null &&
                 menus.map((menu) =>
@@ -261,7 +263,7 @@ export const Order = () => {
                       className='section'
                       style={{ minWidth: '27rem' }}
                     >
-                      <div className='card p-2'>
+                      <div className='p-2'>
                         <MenuCard
                           menu={menu}
                           sendSelection={detectMenuSelection}
@@ -275,7 +277,9 @@ export const Order = () => {
                 )}
             </section>
 
-            <h4 className='is-size-3-desktop ml-2'>Merchandise</h4>
+            <h4 className='is-size-3-desktop is-size-4-mobile ml-2'>
+              Merchandise
+            </h4>
             <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
               {menus !== null &&
                 menus.map((menu) =>
@@ -285,7 +289,7 @@ export const Order = () => {
                       className='section'
                       style={{ minWidth: '27rem' }}
                     >
-                      <div className='card p-2'>
+                      <div className='p-2'>
                         <MenuCard
                           menu={menu}
                           sendSelection={detectMenuSelection}
@@ -299,7 +303,9 @@ export const Order = () => {
                 )}
             </section>
 
-            <h4 className='is-size-3-desktop ml-2'>Gift Cards</h4>
+            <h4 className='is-size-3-desktop is-size-4-mobile ml-2'>
+              Gift Cards
+            </h4>
             <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
               {menus !== null &&
                 menus.map((menu) =>
@@ -309,7 +315,7 @@ export const Order = () => {
                       className='section'
                       style={{ minWidth: '27rem' }}
                     >
-                      <div className='card p-2'>
+                      <div className='p-2'>
                         <MenuCard
                           menu={menu}
                           sendSelection={detectMenuSelection}
@@ -387,14 +393,14 @@ export const Order = () => {
                   </p>
                 </div>
                 <button
-                  style={{ marginRight: '1rem' }}
+                  style={{ marginRight: '1rem', marginBottom: '1rem' }}
                   className={'button is-primary'}
                   onClick={handlePlaceOrder}
                 >
                   Place Order
                 </button>
                 <button
-                  style={{ marginRight: '1rem' }}
+                  style={{ marginRight: '1rem', marginBottom: '1rem' }}
                   className='button is-info'
                   onClick={handlePrevious}
                 >
@@ -427,7 +433,7 @@ export const Order = () => {
 
       {step === 'store' && (
         <button
-          style={{ marginRight: '1rem' }}
+          style={{ marginRight: '1rem', marginBottom: '1rem' }}
           disabled={!location}
           className='button is-info'
           onClick={handleNext}
@@ -437,7 +443,7 @@ export const Order = () => {
       )}
       {step === 'menu' && (
         <button
-          style={{ marginRight: '1rem' }}
+          style={{ marginRight: '1rem', marginBottom: '1rem' }}
           disabled={!menuChoices || menuChoices.length === 0}
           className='button is-info'
           onClick={handleNext}

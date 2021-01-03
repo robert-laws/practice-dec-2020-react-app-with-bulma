@@ -38,7 +38,7 @@ export const Menu = () => {
     <SubPage>
       <PageTitle>Menu</PageTitle>
       <h4 className='is-size-3-desktop ml-2'>Drinks</h4>
-      <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
+      <section className='is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-center'>
         {menus !== null &&
           menus.map((menu) =>
             menu.category === 'drink' ? (
