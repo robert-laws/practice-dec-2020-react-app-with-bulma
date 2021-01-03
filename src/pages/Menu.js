@@ -37,7 +37,7 @@ export const Menu = () => {
   return (
     <SubPage>
       <PageTitle>Menu</PageTitle>
-      <h4 className='is-size-3-desktop ml-2'>Drinks</h4>
+      <h4 className='is-size-3-desktop is-size-4-mobile ml-2'>Drinks</h4>
       <section className='is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-center'>
         {menus !== null &&
           menus.map((menu) =>
@@ -66,8 +66,8 @@ export const Menu = () => {
           )}
       </section>
 
-      <h4 className='is-size-3-desktop ml-2'>Food</h4>
-      <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
+      <h4 className='is-size-3-desktop is-size-4-mobile ml-2'>Food</h4>
+      <section className='is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-center'>
         {menus !== null &&
           menus.map((menu) =>
             menu.category === 'food' ? (
@@ -95,8 +95,8 @@ export const Menu = () => {
           )}
       </section>
 
-      <h4 className='is-size-3-desktop ml-2'>Merchandise</h4>
-      <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
+      <h4 className='is-size-3-desktop is-size-4-mobile ml-2'>Merchandise</h4>
+      <section className='is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-center'>
         {menus !== null &&
           menus.map((menu) =>
             menu.category === 'merchandise' ? (
@@ -124,8 +124,8 @@ export const Menu = () => {
           )}
       </section>
 
-      <h4 className='is-size-3-desktop ml-2'>Gift Cards</h4>
-      <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
+      <h4 className='is-size-3-desktop is-size-4-mobile ml-2'>Gift Cards</h4>
+      <section className='is-flex is-flex-direction-row is-flex-wrap-wrap is-justify-content-center'>
         {menus !== null &&
           menus.map((menu) =>
             menu.category === 'gift cards' ? (
