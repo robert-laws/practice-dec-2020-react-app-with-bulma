@@ -38,6 +38,11 @@ export const online = [
         url: 'https://guides.library.georgetown.edu/linkedinlearning',
         text: 'LinkedIn Learning',
       },
+      {
+        type: 'link',
+        url: 'https://datavizcatalogue.com/',
+        text: 'The Data Visualisation Catalogue',
+      },
     ],
   },
 ];
