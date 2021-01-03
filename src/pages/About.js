@@ -51,12 +51,13 @@ export const About = () => {
             </p>
           </div>
         </div>
-        <img
-          className='image'
-          style={{ height: '300px' }}
-          src={paperCupArtistic}
-          alt='Paper Coffee Cup'
-        />
+        <div className='is-flex is-justify-content-center'>
+          <img
+            style={{ maxWidth: '226px', maxHeight: '320px' }}
+            src={paperCupArtistic}
+            alt='Paper Coffee Cup'
+          />
+        </div>
       </div>
     </SubPage>
   );
