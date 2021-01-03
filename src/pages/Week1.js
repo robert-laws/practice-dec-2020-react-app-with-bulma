@@ -190,12 +190,11 @@ export const Week1 = () => {
       <SectionGroup>
         <SectionTitle id='connecting-to-data'>Connecting to Data</SectionTitle>
         <SectionContent>
-          <div class='columns is-mobile'>
+          <div class='columns'>
             <div class='column is-three-fifths is-offset-one-fifth'>
               <iframe
+                style={{ width: '100%', minHeight: '450px' }}
                 title='Connecting to Data in Tableau'
-                width='800'
-                height='450'
                 src='https://www.youtube.com/embed/FDxkvi1DZls'
                 frameborder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -211,12 +210,11 @@ export const Week1 = () => {
           Interface Walkthrough
         </SectionTitle>
         <SectionContent>
-          <div class='columns is-mobile'>
+          <div class='columns'>
             <div class='column is-three-fifths is-offset-one-fifth'>
               <iframe
                 title='Tableau Interface Walkthrough'
-                width='800'
-                height='450'
+                style={{ width: '100%', minHeight: '450px' }}
                 src='https://www.youtube.com/embed/EYBgwHA8YuM'
                 frameborder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -232,12 +230,11 @@ export const Week1 = () => {
           Basics of Building Visualizations
         </SectionTitle>
         <SectionContent>
-          <div class='columns is-mobile'>
+          <div class='columns'>
             <div class='column is-three-fifths is-offset-one-fifth'>
               <iframe
                 title='Basics of Building Visualizations'
-                width='800'
-                height='450'
+                style={{ width: '100%', minHeight: '450px' }}
                 src='https://www.youtube.com/embed/KhY4qndWhQY'
                 frameborder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -253,12 +250,11 @@ export const Week1 = () => {
           Labeling Visualizations
         </SectionTitle>
         <SectionContent>
-          <div class='columns is-mobile'>
+          <div class='columns'>
             <div class='column is-three-fifths is-offset-one-fifth'>
               <iframe
                 title='Labeling Visualizations'
-                width='800'
-                height='450'
+                style={{ width: '100%', minHeight: '450px' }}
                 src='https://www.youtube.com/embed/etCFY-uM1X8'
                 frameborder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -272,12 +268,11 @@ export const Week1 = () => {
       <SectionGroup>
         <SectionTitle id='sorting'>Sorting</SectionTitle>
         <SectionContent>
-          <div class='columns is-mobile'>
+          <div class='columns'>
             <div class='column is-three-fifths is-offset-one-fifth'>
               <iframe
                 title='Sorting'
-                width='800'
-                height='450'
+                style={{ width: '100%', minHeight: '450px' }}
                 src='https://www.youtube.com/embed/YyPrWrQih1M'
                 frameborder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -291,12 +286,11 @@ export const Week1 = () => {
       <SectionGroup>
         <SectionTitle id='filtering'>Filtering</SectionTitle>
         <SectionContent>
-          <div class='columns is-mobile'>
+          <div class='columns'>
             <div class='column is-three-fifths is-offset-one-fifth'>
               <iframe
                 title='Filtering'
-                width='800'
-                height='450'
+                style={{ width: '100%', minHeight: '450px' }}
                 src='https://www.youtube.com/embed/F4DGioZAvwg'
                 frameborder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -312,12 +306,11 @@ export const Week1 = () => {
           Exporting Visualizations
         </SectionTitle>
         <SectionContent>
-          <div class='columns is-mobile'>
+          <div class='columns'>
             <div class='column is-three-fifths is-offset-one-fifth'>
               <iframe
                 title='Exporting Visualizations'
-                width='800'
-                height='450'
+                style={{ width: '100%', minHeight: '450px' }}
                 src='https://www.youtube.com/embed/jUHcs7C9uA8'
                 frameborder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -332,7 +325,7 @@ export const Week1 = () => {
       <SectionGroup>
         <SectionTitle id='column-chart'>Column Chart</SectionTitle>
         <SectionContent>
-          <div class='columns is-mobile'>
+          <div class='columns'>
             <div class='column is-three-fifths is-offset-one-fifth'>
               <Image
                 src={barChartExample}
@@ -353,7 +346,7 @@ export const Week1 = () => {
           Multi-set Column Chart
         </SectionTitle>
         <SectionContent>
-          <div class='columns is-mobile'>
+          <div class='columns'>
             <div class='column is-three-fifths is-offset-one-fifth'>
               <Image
                 src={multisetBarChartExample}
@@ -371,7 +364,7 @@ export const Week1 = () => {
       <SectionGroup>
         <SectionTitle id='pie-chart'>Pie Chart</SectionTitle>
         <SectionContent>
-          <div class='columns is-mobile'>
+          <div class='columns'>
             <div class='column is-three-fifths is-offset-one-fifth'>
               <Image
                 src={pieChartExample}
