@@ -10,7 +10,10 @@ export const BaseMenuCard = ({ title, price, children, bgColor = 'white' }) => {
       className='card-content is-flex is-flex-direction-column is-flex-wrap-wrap'
       style={{ backgroundColor: bgColor, flex: '1', borderRadius: '0.25rem' }}
     >
-      <div className='is-flex is-flex-direction-row is-justify-content-space-between is-flex-wrap-wrap'>
+      <div
+        style={{ minHeight: '3.2rem' }}
+        className='is-flex is-flex-direction-row is-justify-content-space-between is-flex-wrap-wrap'
+      >
         <p className='has-text-weight-bold title is-size-5'>{title}</p>
         {children}
       </div>

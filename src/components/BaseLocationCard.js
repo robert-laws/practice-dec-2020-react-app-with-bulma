@@ -23,7 +23,21 @@ export const BaseLocationCard = ({
 
   return (
     <div className='card-content'>
-      <p className='has-text-weight-bold title is-size-5'>{title}</p>
+      {card === 'order' ? (
+        <p
+          style={{ minHeight: '1rem' }}
+          className='has-text-weight-bold title is-size-5'
+        >
+          {title}
+        </p>
+      ) : (
+        <p
+          style={{ minHeight: '4.2rem' }}
+          className='has-text-weight-bold title is-size-5'
+        >
+          {title}
+        </p>
+      )}
       {card === 'order' ? (
         <section className='is-flex is-flex-desktop-only'>
           <div style={{ width: '120px', marginRight: '10px' }}>
