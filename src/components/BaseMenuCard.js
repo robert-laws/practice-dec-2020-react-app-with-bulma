@@ -20,7 +20,7 @@ export const BaseMenuCard = ({ title, price, children, bgColor = 'white' }) => {
       <div>
         <p className='mb-4'>Price: ${price.toFixed(2)}</p>
       </div>
-      <div className='is-flex is-justify-content-center'>
+      <div>
         <img className='box' src={imgUrl} alt={title} />
       </div>
     </div>

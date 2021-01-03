@@ -17,7 +17,8 @@ export const Footer = () => {
             </p>
           </NavLink>
           <p>Course: Spring 2021</p>
-          <p>Fictitious company from Connecticut</p>
+          <p>Fictitious Coffee Company</p>
+          <p>Connecticut, USA</p>
           <p>Copyright 2021</p>
         </div>
         <div className='column is-2 has-text-centered'>
