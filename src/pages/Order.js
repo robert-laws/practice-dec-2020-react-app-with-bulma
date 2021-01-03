@@ -185,9 +185,19 @@ export const Order = () => {
           <section
             className={`box ${step === 'store' ? 'showBox' : 'hideBox'}`}
           >
-            <h4 className='is-size-3-desktop is-size-4-mobile mb-4'>
-              Step 1: Select a Location
-            </h4>
+            <div className='is-flex-desktop is-justify-content-space-between'>
+              <h4 className='is-size-3-desktop is-size-4-mobile mb-4'>
+                Step 1: Select a Location
+              </h4>
+              <button
+                style={{ marginRight: '1rem', marginBottom: '1rem' }}
+                disabled={!location}
+                className='button is-info'
+                onClick={handleNext}
+              >
+                Next Step: Select from the Menu
+              </button>
+            </div>
             <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
               {locations !== null &&
                 locations.map((location) => (
@@ -225,9 +235,24 @@ export const Order = () => {
                 )}
               </div>
             )}
-            <h4 className='is-size-3-desktop is-size-4-mobile mb-4'>
-              Step 2: Select from the Menu
-            </h4>
+            <div className='is-flex-desktop is-justify-content-space-between'>
+              <h4 className='is-size-3-desktop is-size-4-mobile mb-4'>
+                Step 2: Select from the Menu
+              </h4>
+              <div>
+                <button
+                  style={{ marginRight: '1rem', marginBottom: '1rem' }}
+                  disabled={!menuChoices || menuChoices.length === 0}
+                  className='button is-info'
+                  onClick={handleNext}
+                >
+                  Next Step: Finalize your Order
+                </button>
+                <button className='button is-warning' onClick={handlePrevious}>
+                  Change Store
+                </button>
+              </div>
+            </div>
 
             <h4 className='is-size-3-desktop is-size-4-mobile ml-2'>Drinks</h4>
             <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
@@ -438,7 +463,7 @@ export const Order = () => {
           className='button is-info'
           onClick={handleNext}
         >
-          Select from the Menu
+          Next Step: Select from the Menu
         </button>
       )}
       {step === 'menu' && (
@@ -448,7 +473,7 @@ export const Order = () => {
           className='button is-info'
           onClick={handleNext}
         >
-          Finalize your Order
+          Next Step: Finalize your Order
         </button>
       )}
       {step === 'menu' && (

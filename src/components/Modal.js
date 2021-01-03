@@ -74,7 +74,10 @@ export const Modal = () => {
                   Category: {selectionObject ? selectionObject.category : ''}
                 </p>
                 <hr />
-                <p>Price: ${selectionObject ? selectionObject.price : ''}</p>
+                <p>
+                  Price: $
+                  {selectionObject ? selectionObject.price.toFixed(2) : ''}
+                </p>
                 {selectionObject ? (
                   selectionObject.seasonal ? (
                     <p>Available Seasonally</p>
