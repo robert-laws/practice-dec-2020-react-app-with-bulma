@@ -22,8 +22,7 @@ export const Home = () => {
                 className='subtitle is-size-5-mobile is-size-4-desktop ml-2'
                 style={{ marginTop: '-1rem' }}
               >
-                Resources for Learning Data Visualization and getting your
-                caffeine fix
+                Resources to learn Data Visualization and get your caffeine fix
               </h3>
             </div>
             <div className='column'>
@@ -99,8 +98,8 @@ export const Home = () => {
                       />
                     </div>
                     <div className='is-flex is-flex-direction-column is-justify-content-center is-align-items-center mx-5'>
+                      <div className='kpi-2'>18 Menu Options</div>
                       <div className='kpi-1'>6 Gift & Merchandise Choices</div>
-                      <div className='kpi-2'>18 Menu Choices</div>
                     </div>
                   </div>
                 </Slide>
@@ -259,7 +258,7 @@ export const Home = () => {
                       />
                     </div>
                     <div className='is-flex is-flex-direction-column is-justify-content-center is-align-items-center mx-5'>
-                      <div className='kpi-4'>5 Millions in Sales in 2020</div>
+                      <div className='kpi-4'>$1.86M in sales since 2014</div>
                     </div>
                   </div>
                 </Slide>

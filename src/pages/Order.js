@@ -185,7 +185,9 @@ export const Order = () => {
           <section
             className={`box ${step === 'store' ? 'showBox' : 'hideBox'}`}
           >
-            <h4 className='is-size-3-desktop mb-4'>Select a Location</h4>
+            <h4 className='is-size-3-desktop mb-4'>
+              Step 1: Select a Location
+            </h4>
             <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
               {locations !== null &&
                 locations.map((location) => (
@@ -221,7 +223,9 @@ export const Order = () => {
                 {location.drive_thru && <p>Drive Thru Available</p>}
               </div>
             )}
-            <h4 className='is-size-3-desktop mb-4'>Select from the Menu</h4>
+            <h4 className='is-size-3-desktop mb-4'>
+              Step 2: Select from the Menu
+            </h4>
 
             <h4 className='is-size-3-desktop ml-2'>Drinks</h4>
             <section className='is-flex is-flex-direction-row is-flex-wrap-wrap'>
@@ -329,28 +333,39 @@ export const Order = () => {
           >
             {location && menuChoices.length > 0 && (
               <section className='section'>
-                <div className='box'>
+                <div className='content'>
                   <h4 className='is-size-3-desktop mb-4'>
-                    Finalize your Order
+                    Step 3: Finalize your Order
                   </h4>
-                  <p>Pickup Location: {location.title}</p>
-                  <p>Menu Items:</p>
-                  {menuChoices.map((item) => (
-                    <p key={item.id}>
-                      {item.title}, quantity: {item.selectedQuantity}
-                    </p>
-                  ))}
+                  <p>
+                    <span className='has-text-weight-bold'>
+                      Pickup Location
+                    </span>
+                    : {location.title}
+                  </p>
+                  <p>
+                    <span className='has-text-weight-bold'>Menu Items</span>:
+                  </p>
+                  <ul>
+                    {menuChoices.map((item) => (
+                      <li key={item.id}>
+                        {item.title} [quantity: {item.selectedQuantity}]
+                      </li>
+                    ))}
+                  </ul>
                   {location.drive_thru && (
-                    <label className='checkbox'>
-                      <input
-                        checked={selectDriveThru}
-                        onChange={(event) =>
-                          setSelectedDriveThru(event.target.checked)
-                        }
-                        type='checkbox'
-                      />{' '}
-                      Pick up at Drive Thru
-                    </label>
+                    <div className='box'>
+                      <label className='checkbox'>
+                        <input
+                          checked={selectDriveThru}
+                          onChange={(event) =>
+                            setSelectedDriveThru(event.target.checked)
+                          }
+                          type='checkbox'
+                        />{' '}
+                        Pick up at Drive Thru
+                      </label>
+                    </div>
                   )}
                   <p>
                     <strong>
@@ -361,20 +376,28 @@ export const Order = () => {
                       )}
                     </strong>
                   </p>
+                  <hr />
                   <p>
                     <strong>
                       Total Price: $
-                      {menuChoices.reduce((sum, item) => sum + item.total, 0)}
+                      {menuChoices
+                        .reduce((sum, item) => sum + item.total, 0)
+                        .toFixed(2)}
                     </strong>
                   </p>
                 </div>
                 <button
+                  style={{ marginRight: '1rem' }}
                   className={'button is-primary'}
                   onClick={handlePlaceOrder}
                 >
                   Place Order
                 </button>
-                <button className='button is-info' onClick={handlePrevious}>
+                <button
+                  style={{ marginRight: '1rem' }}
+                  className='button is-info'
+                  onClick={handlePrevious}
+                >
                   Change Menu Selections
                 </button>
                 <button className='button is-warning' onClick={restartOrder}>
@@ -404,6 +427,7 @@ export const Order = () => {
 
       {step === 'store' && (
         <button
+          style={{ marginRight: '1rem' }}
           disabled={!location}
           className='button is-info'
           onClick={handleNext}
@@ -413,6 +437,7 @@ export const Order = () => {
       )}
       {step === 'menu' && (
         <button
+          style={{ marginRight: '1rem' }}
           disabled={!menuChoices || menuChoices.length === 0}
           className='button is-info'
           onClick={handleNext}
