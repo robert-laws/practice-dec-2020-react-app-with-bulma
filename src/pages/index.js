@@ -1,4 +1,5 @@
 export { Home } from './Home';
+export { Cafe } from './Cafe';
 export { Stores } from './Stores';
 export { Menu } from './Menu';
 export { Data } from './Data';
@@ -6,6 +7,7 @@ export { Order } from './Order';
 export { Concepts } from './Concepts';
 export { Resources } from './Resources';
 export { About } from './About';
+export { Weeks } from './Weeks';
 export { Week1 } from './Week1';
 export { Week2 } from './Week2';
 export { Week3 } from './Week3';

@@ -47,7 +47,7 @@ export const Header = () => {
             <div className='navbar-item has-dropdown is-hoverable'>
               <NavLink
                 className='navbar-link'
-                to='/'
+                to='/cafe'
                 onClick={() => closeMobileMenu()}
               >
                 Visit the Data Viz Cafe
@@ -98,7 +98,7 @@ export const Header = () => {
             <div className='navbar-item has-dropdown is-hoverable'>
               <NavLink
                 className='navbar-link'
-                to='/'
+                to='/weeks'
                 onClick={() => closeMobileMenu()}
               >
                 Class Weeks
