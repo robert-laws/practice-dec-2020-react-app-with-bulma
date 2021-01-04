@@ -1,7 +1,7 @@
 import React from 'react';
 import Slide from 'react-reveal/Slide';
 import hero from '../images/home-page/data-viz-cafe-hero-v2.png';
-import paperCupArtisticSmall from '../images/home-page/paper-cup-artistic-small.png';
+import dataVizLineGraph from '../images/home-page/data-viz-line-graph.png';
 import locationRural from '../images/home-page/data-viz-stores-rural.png';
 import cafeInterior from '../images/home-page/data-viz-cafe-interior.png';
 import locationSuburban from '../images/home-page/data-viz-stores-suburban.jpg';
@@ -17,14 +17,14 @@ export const Home = () => {
         <div className='container'>
           <div className='columns is-vcentered'>
             <div className='column is-one-third'>
-              <h1 className='title is-size-3-mobile is-size-1-desktop ml-2'>
+              <h1 className='title is-size-2-mobile is-size-1-desktop ml-2'>
                 The Data Viz Cafe
               </h1>
               <h3
-                className='subtitle is-size-5-mobile is-size-4-desktop ml-2'
+                className='subtitle is-size-4-mobile is-size-3-desktop ml-2'
                 style={{ marginTop: '-1rem' }}
               >
-                Resources to learn Data Visualization and get your caffeine fix
+                Resources to learn data visualization and get your caffeine fix
               </h3>
             </div>
             <div className='column'>
@@ -45,18 +45,20 @@ export const Home = () => {
                   Data Visualization with Real-World Examples
                 </h1>
                 <div className='columns'>
-                  <div className='column is-two-fifths has-text-centered'>
+                  <div className='column is-one-half has-text-centered'>
                     <img
-                      style={{ maxWidth: '300px', maxHeight: '300px' }}
+                      style={{ maxWidth: '400px', maxHeight: '400px' }}
                       src={locationUrban}
                       alt='Data Viz Cafe Urban Location'
                     />
                   </div>
-                  <div className='content column is-three-fifths'>
+                  <div className='content column is-one-half'>
                     <p>
-                      Using a fictitious coffee shop company called the Data Viz
-                      Cafe located in Connecticut, USA as an example, students
-                      will learn Data Visualization and Data Analytic concepts.
+                      The Data Viz Cafe is a fictitious coffee shop company
+                      located in Connecticut, USA. It exists as an example of a
+                      real-world business that produces large amounts of data.
+                      Through the Data Viz Cafe, students will learn Data
+                      Visualization and Data Analytic concepts.
                     </p>
                     <p>
                       Students have access to datasets with company data about
@@ -110,7 +112,7 @@ export const Home = () => {
         </div>
       </section>
       <div
-        className='my-6 has-background-info-light'
+        className='my-6 has-background-primary-light'
         style={{ minHeight: '550px' }}
       >
         <section className='section'>
@@ -121,14 +123,14 @@ export const Home = () => {
                   Discover Trends through Data Analytics
                 </h1>
                 <div className='columns'>
-                  <div className='column is-two-fifths has-text-centered'>
+                  <div className='column is-one-half has-text-centered'>
                     <img
-                      style={{ maxWidth: '300px', maxHeight: '300px' }}
+                      style={{ maxWidth: '400px', maxHeight: '400px' }}
                       src={scatterPlot}
                       alt='Data Viz Cafe Urban Location'
                     />
                   </div>
-                  <div className='content column is-three-fifths'>
+                  <div className='content column is-one-half'>
                     <p>
                       Having a data set of over 230,000 individual order records
                       is overwhelming to parse on its own. That's where software
@@ -146,6 +148,11 @@ export const Home = () => {
                       and business intelligence, using data as a means to drive
                       decision making forward. This is a key component of what
                       students learn through the course content.
+                    </p>
+                    <p>
+                      Data visualization, when combined with data analytics,
+                      allows students to practice these skills and understand
+                      how each support the other.
                     </p>
                   </div>
                 </div>
@@ -195,14 +202,14 @@ export const Home = () => {
                   Visualize the Menu & Discover Top Products
                 </h1>
                 <div className='columns'>
-                  <div className='column is-two-fifths has-text-centered'>
+                  <div className='column is-one-half has-text-centered'>
                     <img
-                      style={{ maxWidth: '226px', maxHeight: '320px' }}
-                      src={paperCupArtisticSmall}
+                      style={{ maxWidth: '400px', maxHeight: '400px' }}
+                      src={dataVizLineGraph}
                       alt='Data Viz Cafe Urban Location'
                     />
                   </div>
-                  <div className='content column is-three-fifths'>
+                  <div className='content column is-one-half'>
                     <p>
                       The products in the Dat Viz Cafe are divided into the
                       categories of drink, food, merchandise, and gift cards.
@@ -273,14 +280,14 @@ export const Home = () => {
                   Visualize Cafe Locations Geographically
                 </h1>
                 <div className='columns'>
-                  <div className='column is-two-fifths has-text-centered'>
+                  <div className='column is-one-half has-text-centered'>
                     <img
-                      style={{ maxWidth: '300px', maxHeight: '300px' }}
+                      style={{ maxWidth: '400px', maxHeight: '400px' }}
                       src={locationRural}
-                      alt='Data Viz Cafe Urban Location'
+                      alt='Data Viz Cafe Rural Location'
                     />
                   </div>
-                  <div className='content column is-three-fifths'>
+                  <div className='content column is-one-half'>
                     <p>
                       The Data Viz Cafe is geographically situated in the US
                       state of Connecticut. The 24 locations are divided between
