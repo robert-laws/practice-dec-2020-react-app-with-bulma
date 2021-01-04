@@ -7,6 +7,8 @@ import cafeInterior from '../images/home-page/data-viz-cafe-interior.png';
 import locationSuburban from '../images/home-page/data-viz-stores-suburban.jpg';
 import cafeSetting from '../images/home-page/data-viz-cafe-setting.png';
 import locationUrban from '../images/home-page/data-viz-stores-urban.png';
+import coffeeBeans from '../images/home-page/data-viz-bag.png';
+import scatterPlot from '../images/home-page/data-viz-scatter-plot.png';
 
 export const Home = () => {
   return (
@@ -71,6 +73,79 @@ export const Home = () => {
                       include column and bar charts, multi-set column charts,
                       pie charts, scatter plots, line graphs, geographic charts,
                       heatmaps, and more.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section className='section'>
+        <div className='container'>
+          <div className='columns'>
+            <div className='column is-three-fifths-desktop is-offset-one-fifth-desktop'>
+              <div>
+                <Slide big right>
+                  <h1 className='title is-size-2-desktop has-text-centered'>
+                    Create Data & Visualize the Results
+                  </h1>
+                  <div className='is-flex-desktop is-flex-direction-row is-justify-content-center '>
+                    <div className='is-flex is-flex-direction-column is-justify-content-center is-align-items-center'>
+                      <img
+                        style={{ maxWidth: '400px', maxHeight: '300px' }}
+                        className='image mx-5'
+                        src={coffeeBeans}
+                        alt='Coffee Bag and Beans'
+                      />
+                    </div>
+                    <div className='is-flex is-flex-direction-column is-justify-content-center is-align-items-center mx-5'>
+                      <div className='kpi-4'>230,000+ Rows of Data</div>
+                    </div>
+                  </div>
+                </Slide>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        className='my-6 has-background-info-light'
+        style={{ minHeight: '550px' }}
+      >
+        <section className='section'>
+          <div className='container'>
+            <div className='columns'>
+              <div className='column "column is-8 is-offset-2'>
+                <h1 className='title is-size-2-desktop has-text-centered mb-6'>
+                  Discover Trends through Data Analytics
+                </h1>
+                <div className='columns'>
+                  <div className='column is-two-fifths has-text-centered'>
+                    <img
+                      style={{ maxWidth: '300px', maxHeight: '300px' }}
+                      src={scatterPlot}
+                      alt='Data Viz Cafe Urban Location'
+                    />
+                  </div>
+                  <div className='content column is-three-fifths'>
+                    <p>
+                      Having a data set of over 230,000 individual order records
+                      is overwhelming to parse on its own. That's where software
+                      and data analytics comes in to save the day. Students
+                      learn how to approach data with a flexible perspective.
+                    </p>
+                    <p>
+                      Leveraging the power of a software like Tableau, students
+                      can experiment with dozens of different visualizations and
+                      combinations of data points to gain insight into the
+                      business.
+                    </p>
+                    <p>
+                      This technique and approach is the heart of data analytics
+                      and business intelligence, using data as a means to drive
+                      decision making forward. This is a key component of what
+                      students learn through the course content.
                     </p>
                   </div>
                 </div>
@@ -150,10 +225,6 @@ export const Home = () => {
                       dataset, it's also possible to determine the most and
                       least popular products throughout the year and at
                       different times of the day.
-                    </p>
-                    <p>
-                      The richness of the data allows for a wide range of
-                      visualizations and analytics.
                     </p>
                   </div>
                 </div>
