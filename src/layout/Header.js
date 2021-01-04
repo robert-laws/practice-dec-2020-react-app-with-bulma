@@ -9,11 +9,21 @@ export const Header = () => {
     setToggle((prev) => !prev);
   };
 
+  const closeMobileMenu = () => {
+    if (toggle) {
+      showMobile();
+    }
+  };
+
   return (
     <header className='is-flex-grow-0'>
       <nav className='navbar is-transparent'>
         <div className='navbar-brand'>
-          <NavLink className='navbar-item' to='/'>
+          <NavLink
+            className='navbar-item'
+            to='/'
+            onClick={() => closeMobileMenu()}
+          >
             <Logo alt='Data Viz Cafe' width='75' height='75' />
           </NavLink>
           <div
@@ -35,7 +45,11 @@ export const Header = () => {
         >
           <div className='navbar-start'>
             <div className='navbar-item has-dropdown is-hoverable'>
-              <NavLink className='navbar-link' to='/'>
+              <NavLink
+                className='navbar-link'
+                to='/'
+                onClick={() => closeMobileMenu()}
+              >
                 Visit the Data Viz Cafe
               </NavLink>
               <div className='navbar-dropdown is-boxed'>
@@ -44,6 +58,7 @@ export const Header = () => {
                   to='/stores'
                   onClick={(event) => {
                     event.target.blur();
+                    closeMobileMenu();
                   }}
                 >
                   Stores
@@ -53,6 +68,7 @@ export const Header = () => {
                   to='/menu'
                   onClick={(event) => {
                     event.target.blur();
+                    closeMobileMenu();
                   }}
                 >
                   Menu
@@ -62,6 +78,7 @@ export const Header = () => {
                   to='/order'
                   onClick={(event) => {
                     event.target.blur();
+                    closeMobileMenu();
                   }}
                 >
                   Place an Order
@@ -71,6 +88,7 @@ export const Header = () => {
                   to='/data'
                   onClick={(event) => {
                     event.target.blur();
+                    closeMobileMenu();
                   }}
                 >
                   Data
@@ -78,7 +96,11 @@ export const Header = () => {
               </div>
             </div>
             <div className='navbar-item has-dropdown is-hoverable'>
-              <NavLink className='navbar-link' to='/'>
+              <NavLink
+                className='navbar-link'
+                to='/'
+                onClick={() => closeMobileMenu()}
+              >
                 Class Weeks
               </NavLink>
               <div className='navbar-dropdown is-boxed'>
@@ -87,6 +109,7 @@ export const Header = () => {
                   to='/week1'
                   onClick={(event) => {
                     event.target.blur();
+                    closeMobileMenu();
                   }}
                 >
                   Week 1
@@ -96,6 +119,7 @@ export const Header = () => {
                   to='/week2'
                   onClick={(event) => {
                     event.target.blur();
+                    closeMobileMenu();
                   }}
                 >
                   Week 2
@@ -105,6 +129,7 @@ export const Header = () => {
                   to='/week3'
                   onClick={(event) => {
                     event.target.blur();
+                    closeMobileMenu();
                   }}
                 >
                   Week 3
@@ -114,6 +139,7 @@ export const Header = () => {
                   to='/week4'
                   onClick={(event) => {
                     event.target.blur();
+                    closeMobileMenu();
                   }}
                 >
                   Week 4
@@ -123,19 +149,32 @@ export const Header = () => {
                   to='/week5'
                   onClick={(event) => {
                     event.target.blur();
+                    closeMobileMenu();
                   }}
                 >
                   Week 5
                 </NavLink>
               </div>
             </div>
-            <NavLink className='navbar-item' to='/concepts'>
+            <NavLink
+              className='navbar-item'
+              to='/concepts'
+              onClick={() => closeMobileMenu()}
+            >
               Data Visualization Concepts
             </NavLink>
-            <NavLink className='navbar-item' to='/resources'>
+            <NavLink
+              className='navbar-item'
+              to='/resources'
+              onClick={() => closeMobileMenu()}
+            >
               Resources
             </NavLink>
-            <NavLink className='navbar-item' to='/about'>
+            <NavLink
+              className='navbar-item'
+              to='/about'
+              onClick={() => closeMobileMenu()}
+            >
               About
             </NavLink>
           </div>
@@ -144,7 +183,11 @@ export const Header = () => {
             <div className='navbar-item'>
               <div className='field is-grouped'>
                 <p className='control'>
-                  <NavLink className='button is-info' to='/order'>
+                  <NavLink
+                    className='button is-info'
+                    to='/order'
+                    onClick={() => closeMobileMenu()}
+                  >
                     <span className='icon'>
                       <i className='fas fa-shopping-cart'></i>
                     </span>
