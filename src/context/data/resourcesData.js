@@ -16,6 +16,19 @@ export const tableau = [
   },
 ];
 
+export const course = [
+  {
+    title: 'Course Data',
+    items: [
+      {
+        type: 'link',
+        url: 'datasets/data-viz-cafe-dataset.xlsx',
+        text: 'Data Viz Cafe - Dataset',
+      },
+    ],
+  },
+];
+
 export const online = [
   {
     items: [
@@ -42,6 +55,11 @@ export const online = [
         type: 'link',
         url: 'https://datavizcatalogue.com/',
         text: 'The Data Visualisation Catalogue',
+      },
+      {
+        type: 'link',
+        url: 'https://datavizproject.com/',
+        text: 'Data Viz Project',
       },
     ],
   },

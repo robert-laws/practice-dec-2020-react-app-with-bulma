@@ -10,6 +10,7 @@ import {
   gcc,
   developing,
   developed,
+  course,
 } from '../context/data/resourcesData';
 
 export const Resources = () => {
@@ -24,6 +25,7 @@ export const Resources = () => {
       <SectionList
         title='Datasets'
         lists={[
+          ...course,
           ...recommended,
           ...international,
           ...unitedstates,
