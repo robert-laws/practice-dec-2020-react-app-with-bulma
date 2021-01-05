@@ -40,15 +40,15 @@ export const Week1 = () => {
         </SectionTitle>
         <SectionContent>
           <blockquote>
+            "Visualization is a medium: a way to explore, present, and express{' '}
+            <strong>meaning in data</strong>." - Nathan Yau,{' '}
+            <em>Data Points</em>
+          </blockquote>
+          <blockquote>
             "Being able to <strong>visualize data</strong> and tell stories with
             it is key to turning it into <strong>information</strong> that can
             be used to drive better <strong>decision making</strong>." - Cole
             Nussbaumer Knaflic. <em>Storytelling with Data</em>
-          </blockquote>
-          <blockquote>
-            "Visualization is a medium: a way to explore, present, and express{' '}
-            <strong>meaning in data</strong>." - Nathan Yau,{' '}
-            <em>Data Points</em>
           </blockquote>
         </SectionContent>
       </SectionGroup>

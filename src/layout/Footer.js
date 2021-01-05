@@ -28,7 +28,7 @@ export const Footer = () => {
 
           <p>Course: Spring 2021</p>
           <p>Fictitious Coffee Company</p>
-          <p>Connecticut, USA</p>
+          <p>Based in Connecticut, USA</p>
           <p>Copyright 2021</p>
         </div>
         <div className='column is-2 has-text-centered'>
